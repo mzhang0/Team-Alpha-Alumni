@@ -4,6 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Exo-Black.otf">
+            <string>Exo-Black</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="yvc-q6-adh">
@@ -34,14 +39,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gHN-E2-oWe">
-                                <rect key="frame" x="-128" y="521" width="1024" height="104"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="104" id="PUB-Lf-ypR"/>
-                                    <constraint firstAttribute="width" constant="1024" id="iuG-N0-2lw"/>
-                                </constraints>
-                            </view>
                             <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERM-9L-n4a">
                                 <rect key="frame" x="532" y="463" width="220" height="220"/>
                                 <subviews>
@@ -69,10 +66,10 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AwesomeIncLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Mi-53-QUH">
-                                <rect key="frame" x="156" y="179" width="457" height="75"/>
+                                <rect key="frame" x="139" y="160" width="491" height="94"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="a4y-AL-Pyo"/>
-                                    <constraint firstAttribute="width" constant="457" id="hgk-al-BVN"/>
+                                    <constraint firstAttribute="height" constant="94" id="a4y-AL-Pyo"/>
+                                    <constraint firstAttribute="width" constant="491" id="hgk-al-BVN"/>
                                 </constraints>
                             </imageView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iin-kn-SOX">
@@ -135,12 +132,12 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet our awesome Team Alpha alumni" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3R3-ex-jx3">
-                                <rect key="frame" x="208" y="262" width="353" height="21"/>
+                                <rect key="frame" x="180" y="262" width="409" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Q28-Wr-En8"/>
-                                    <constraint firstAttribute="width" constant="353" id="hNA-lq-LUf"/>
+                                    <constraint firstAttribute="width" constant="409" id="hNA-lq-LUf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="23"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -149,8 +146,7 @@
                         <constraints>
                             <constraint firstItem="ERM-9L-n4a" firstAttribute="trailing" secondItem="RXF-U0-DZx" secondAttribute="trailingMargin" id="1Hq-gk-6xX"/>
                             <constraint firstItem="qf8-gK-T5Z" firstAttribute="leading" secondItem="RXF-U0-DZx" secondAttribute="leadingMargin" id="7Tm-vI-XN3"/>
-                            <constraint firstItem="2Mi-53-QUH" firstAttribute="top" secondItem="sFO-pW-ZCQ" secondAttribute="bottom" constant="115" id="95H-A6-gBh"/>
-                            <constraint firstAttribute="centerX" secondItem="gHN-E2-oWe" secondAttribute="centerX" id="9VQ-Qn-hMS"/>
+                            <constraint firstItem="2Mi-53-QUH" firstAttribute="top" secondItem="sFO-pW-ZCQ" secondAttribute="bottom" constant="96" id="95H-A6-gBh"/>
                             <constraint firstItem="3R3-ex-jx3" firstAttribute="top" secondItem="2Mi-53-QUH" secondAttribute="bottom" constant="8" id="9px-zF-3Rq"/>
                             <constraint firstItem="ERM-9L-n4a" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="180" id="DtX-ma-0XT"/>
                             <constraint firstAttribute="centerX" secondItem="iin-kn-SOX" secondAttribute="centerX" id="IQb-jE-eXC"/>
@@ -190,13 +186,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4V-bO-XPi">
-                                                    <rect key="frame" x="316" y="20" width="137" height="30"/>
+                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="8LG-96-1eJ"/>
-                                                        <constraint firstAttribute="width" constant="137" id="WUe-4J-Ssf"/>
+                                                        <constraint firstAttribute="height" constant="42" id="8LG-96-1eJ"/>
+                                                        <constraint firstAttribute="width" constant="299" id="WUe-4J-Ssf"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2015 Alphas">
+                                                    <state key="normal" title="2015 Team Alpha Members">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -219,13 +215,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-tH-7dX">
-                                                    <rect key="frame" x="316" y="20" width="136" height="30"/>
+                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="136" id="AjI-a8-29j"/>
-                                                        <constraint firstAttribute="height" constant="30" id="nRn-KX-1rj"/>
+                                                        <constraint firstAttribute="width" constant="299" id="AjI-a8-29j"/>
+                                                        <constraint firstAttribute="height" constant="42" id="nRn-KX-1rj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2014 Alphas">
+                                                    <state key="normal" title="2014 Team Alpha Members">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -248,13 +244,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h15-ZC-aFs">
-                                                    <rect key="frame" x="316" y="20" width="136" height="30"/>
+                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="CLf-dU-CWU"/>
-                                                        <constraint firstAttribute="width" constant="136" id="cFf-do-njm"/>
+                                                        <constraint firstAttribute="height" constant="42" id="CLf-dU-CWU"/>
+                                                        <constraint firstAttribute="width" constant="299" id="cFf-do-njm"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2013 Alphas">
+                                                    <state key="normal" title="2013 Team Alpha Members">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -278,13 +274,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8EF-LX-MyQ">
-                                                    <rect key="frame" x="315" y="20" width="139" height="30"/>
+                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="lqt-4y-6xN"/>
-                                                        <constraint firstAttribute="width" constant="139" id="u8M-aW-nVG"/>
+                                                        <constraint firstAttribute="height" constant="42" id="lqt-4y-6xN"/>
+                                                        <constraint firstAttribute="width" constant="299" id="u8M-aW-nVG"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2012 Alphas">
+                                                    <state key="normal" title="2012 Team Alpha Members">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -308,13 +304,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEO-9c-nKX">
-                                                    <rect key="frame" x="311" y="20" width="146" height="30"/>
+                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="146" id="4CO-QM-k0D"/>
-                                                        <constraint firstAttribute="height" constant="30" id="UJb-r4-kHZ"/>
+                                                        <constraint firstAttribute="width" constant="299" id="4CO-QM-k0D"/>
+                                                        <constraint firstAttribute="height" constant="42" id="UJb-r4-kHZ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2011 Alphas">
+                                                    <state key="normal" title="2011 Team Alpha Members">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -338,13 +334,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mog-eG-rrM">
-                                                    <rect key="frame" x="315" y="20" width="138" height="30"/>
+                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="138" id="SwP-3j-peH"/>
-                                                        <constraint firstAttribute="height" constant="30" id="dfk-lb-k6v"/>
+                                                        <constraint firstAttribute="width" constant="299" id="SwP-3j-peH"/>
+                                                        <constraint firstAttribute="height" constant="42" id="dfk-lb-k6v"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2010 Alphas">
+                                                    <state key="normal" title="2010 Team Alpha Members">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -367,13 +363,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-k4-5zb">
-                                                    <rect key="frame" x="287" y="20" width="194" height="30"/>
+                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="194" id="b40-ez-3V9"/>
-                                                        <constraint firstAttribute="height" constant="30" id="n6O-Oy-Hyu"/>
+                                                        <constraint firstAttribute="width" constant="299" id="b40-ez-3V9"/>
+                                                        <constraint firstAttribute="height" constant="42" id="n6O-Oy-Hyu"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2009 Alphas">
+                                                    <state key="normal" title="2009 Team Alpha Members">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -385,6 +381,35 @@
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="ELb-k4-5zb" secondAttribute="centerY" id="EKC-e7-Vsp"/>
                                                 <constraint firstAttribute="centerX" secondItem="ELb-k4-5zb" secondAttribute="centerX" id="qFA-Ox-Lzd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="TL0-GP-ch8" customClass="YearSelectionTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TL0-GP-ch8" id="wZ0-6o-yyK">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYz-km-5b7">
+                                                    <rect key="frame" x="249" y="14" width="271" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="Hfj-mh-ql7"/>
+                                                        <constraint firstAttribute="width" constant="271" id="KmT-ze-Lha"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <state key="normal" title="All Team Alpha Members">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="ifH-lr-Kud" kind="push" id="qWf-XO-mo5"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="fYz-km-5b7" secondAttribute="centerY" id="3Te-os-7Ug"/>
+                                                <constraint firstAttribute="centerX" secondItem="fYz-km-5b7" secondAttribute="centerX" id="qxM-qV-Ktb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -407,7 +432,7 @@
             </objects>
             <point key="canvasLocation" x="1397" y="620"/>
         </scene>
-        <!--Awesome Alphas of 20xx-->
+        <!--Team Alpha Members of 20xx Selection-->
         <scene sceneID="Tvc-CG-hx9">
             <objects>
                 <viewController id="ifH-lr-Kud" sceneMemberID="viewController">
@@ -485,7 +510,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Awesome Alphas of 20xx" id="JEe-aE-9Ff">
+                    <navigationItem key="navigationItem" title="Team Alpha Members of 20xx Selection" id="JEe-aE-9Ff">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="e7p-hR-q15">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -597,7 +622,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHe-gh-TXX">
                                 <rect key="frame" x="400" y="226" width="352" height="217"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -605,7 +630,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJF-RK-J8J">
                                 <rect key="frame" x="400" y="484" width="352" height="268"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

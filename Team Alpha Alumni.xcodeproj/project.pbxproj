@@ -17,6 +17,7 @@
 		2052D4201AC75E3600865076 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D41F1AC75E3600865076 /* ProfileVC.m */; };
 		205C81D71AC62FC500D97398 /* MapIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 205C81D61AC62FC500D97398 /* MapIcon.png */; };
 		205C81D91AC62FDB00D97398 /* ProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 205C81D81AC62FDB00D97398 /* ProfileIcon.png */; };
+		20C9D5491AD381BC002F7BA4 /* Exo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20C9D5481AD38169002F7BA4 /* Exo-Black.otf */; };
 		E03923371AB9DC130086AE15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E03923361AB9DC130086AE15 /* main.m */; };
 		E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E03923391AB9DC130086AE15 /* AppDelegate.m */; };
 		E039233D1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E039233B1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld */; };
@@ -52,6 +53,7 @@
 		2052D41F1AC75E3600865076 /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
 		205C81D61AC62FC500D97398 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
 		205C81D81AC62FDB00D97398 /* ProfileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileIcon.png; sourceTree = "<group>"; };
+		20C9D5481AD38169002F7BA4 /* Exo-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Black.otf"; sourceTree = "<group>"; };
 		E03923311AB9DC130086AE15 /* Team Alpha Alumni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team Alpha Alumni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03923351AB9DC130086AE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E03923361AB9DC130086AE15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		202DDA771AC601F900F4DC5E /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				20C9D5471AD38122002F7BA4 /* fonts */,
 				202DDA781AC601F900F4DC5E /* data */,
 				202DDA791AC601F900F4DC5E /* images */,
 			);
@@ -113,6 +116,14 @@
 				202DDA7F1AC601F900F4DC5E /* WorkIcon.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		20C9D5471AD38122002F7BA4 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				20C9D5481AD38169002F7BA4 /* Exo-Black.otf */,
+			);
+			name = fonts;
 			sourceTree = "<group>";
 		};
 		E03923281AB9DC130086AE15 = {
@@ -264,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C9D5491AD381BC002F7BA4 /* Exo-Black.otf in Resources */,
 				E03923431AB9DC130086AE15 /* Main.storyboard in Resources */,
 				205C81D91AC62FDB00D97398 /* ProfileIcon.png in Resources */,
 				202DDA801AC601F900F4DC5E /* AwesomeIncLogo.png in Resources */,
