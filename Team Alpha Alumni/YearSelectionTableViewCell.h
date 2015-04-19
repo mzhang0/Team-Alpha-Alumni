@@ -9,4 +9,6 @@
 
 @interface YearSelectionTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *YearSelectionButton;
+
 @end

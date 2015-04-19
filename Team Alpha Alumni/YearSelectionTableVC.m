@@ -5,6 +5,7 @@
 //
 
 #import "YearSelectionTableVC.h"
+#import "YearSelectionTableViewCell.h"
 
 @interface YearSelectionTableVC ()
 
@@ -12,9 +13,30 @@
 
 @implementation YearSelectionTableVC
 
+static NSString * const reuseIdentifier = @"Cell";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"%@",self.people);
+    
+    NSMutableArray *yearCollection = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < [self.people count]; i++) {
+
+        NSNumber *year = [self.people[i] objectForKey:@"year"];
+        [yearCollection addObject:year];
+    }
+    
+    [yearCollection addObject:[NSNumber numberWithInt:0]];
+    
+    //Removes duplicates.
+    self.years = [[NSSet setWithArray:yearCollection] allObjects];
+    
+    //Sorts array in descending order.
+    self.years = [[[self.years sortedArrayUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
+    
+    NSLog(@"%@", self.years);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -37,29 +59,38 @@
     return NO;
 }
 
-/*
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 7;
+    return self.years.count;
 }
- */
 
-/*
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    YearSelectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     
+    NSNumber *year = self.years[indexPath.row];
+    
+    if ([year isEqualToNumber:[NSNumber numberWithInt:0]])
+        [cell.YearSelectionButton setTitle:@"All Team Alpha Members" forState:UIControlStateNormal];
+    else {
+        NSString *newTitle = [NSString stringWithFormat:@"%@ Team Alpha Members", year];
+        [cell.YearSelectionButton setTitle:newTitle forState:UIControlStateNormal];
+    }
+    
+    
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

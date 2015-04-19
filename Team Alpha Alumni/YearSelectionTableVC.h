@@ -9,4 +9,7 @@
 
 @interface YearSelectionTableVC : UITableViewController
 
+@property (strong, nonatomic) NSArray *people;
+@property (strong, nonatomic) NSArray *years;
+
 @end

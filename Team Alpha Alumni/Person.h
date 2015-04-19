@@ -16,7 +16,7 @@
 @property (weak, nonatomic) NSString *dates;
 @property (weak, nonatomic) NSString *role;
 @property (weak, nonatomic) NSString *memory;
-@property (weak, nonatomic) NSString *definition;
+@property (weak, nonatomic) NSString *experience;
 @property (weak, nonatomic) NSString *thumbnail;
 @property (weak, nonatomic) NSString *fullRes;
 
