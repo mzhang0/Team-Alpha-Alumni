@@ -6,6 +6,7 @@
 
 #import "YearSelectionTableVC.h"
 #import "YearSelectionTableViewCell.h"
+#import "ProfileCollectionVC.h"
 
 @interface YearSelectionTableVC ()
 
@@ -126,14 +127,42 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"ShowProfileCollection"]) {
+        
+        ProfileCollectionVC *profileCollectionController = segue.destinationViewController;
+                
+        //Finds index of the table row containing the selected button
+        CGPoint buttonPoint = [sender convertPoint:CGPointZero toView:self.tableView];
+        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPoint];
+        
+        NSNumber *year = self.years[indexPath.row];
+        
+        if ([year isEqualToNumber:[NSNumber numberWithInt:0]])
+            profileCollectionController.filteredPeople = self.people;
+        else {
+        
+            NSPredicate *yearMatch = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *alumnusInformation, NSDictionary *bindings) {
+            
+                NSNumber *startYear = [alumnusInformation objectForKey:@"year"];
+                return [year isEqualToNumber:startYear];
+            }];
+        
+            profileCollectionController.filteredPeople = [self.people filteredArrayUsingPredicate:yearMatch];
+        }
+        
+        NSLog(@"%@", profileCollectionController.filteredPeople);
+        
+        [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    }
 }
-*/
+
 
 @end

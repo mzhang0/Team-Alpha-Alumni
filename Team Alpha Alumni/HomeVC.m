@@ -24,17 +24,6 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-    /*
-    NSURL *url = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/fac2o3871lm1dsy/Trial1.json"];
-    NSURLRequest * request = [[NSURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10.0];
-    NSOperationQueue * queue = [[NSOperationQueue alloc]init];
-    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        NSData *jsonData = [NSData dataWithContentsOfURL:url];
-        self.people = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-        
-    }];*/
-    
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         NSData *data = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/fac2o3871lm1dsy/Trial1.json"]];
@@ -43,10 +32,6 @@
             //NSLog(@"%@",self.people);
         });
     });
-
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +51,6 @@
 
     }
 }
-
 
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBA431AE4587B00913B85 /* ProfileCollectionVC.m */; };
+		202DBA471AE458A100913B85 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBA461AE458A100913B85 /* ProfileCollectionViewCell.m */; };
 		202DDA801AC601F900F4DC5E /* AwesomeIncLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 202DDA7A1AC601F900F4DC5E /* AwesomeIncLogo.png */; };
 		202DDA831AC601F900F4DC5E /* ProfilePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 202DDA7D1AC601F900F4DC5E /* ProfilePlaceholder.png */; };
 		202DDA841AC601F900F4DC5E /* TommyCrush.png in Resources */ = {isa = PBXBuildFile; fileRef = 202DDA7E1AC601F900F4DC5E /* TommyCrush.png */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		202DBA421AE4587B00913B85 /* ProfileCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionVC.h; sourceTree = "<group>"; };
+		202DBA431AE4587B00913B85 /* ProfileCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionVC.m; sourceTree = "<group>"; };
+		202DBA451AE458A100913B85 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		202DBA461AE458A100913B85 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		202DDA7A1AC601F900F4DC5E /* AwesomeIncLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AwesomeIncLogo.png; sourceTree = "<group>"; };
 		202DDA7D1AC601F900F4DC5E /* ProfilePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfilePlaceholder.png; sourceTree = "<group>"; };
 		202DDA7E1AC601F900F4DC5E /* TommyCrush.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TommyCrush.png; sourceTree = "<group>"; };
@@ -158,6 +164,10 @@
 				2052D4191AC75DD700865076 /* YearSelectionTableVC.m */,
 				2052D41B1AC75E0800865076 /* YearSelectionTableViewCell.h */,
 				2052D41C1AC75E0800865076 /* YearSelectionTableViewCell.m */,
+				202DBA421AE4587B00913B85 /* ProfileCollectionVC.h */,
+				202DBA431AE4587B00913B85 /* ProfileCollectionVC.m */,
+				202DBA451AE458A100913B85 /* ProfileCollectionViewCell.h */,
+				202DBA461AE458A100913B85 /* ProfileCollectionViewCell.m */,
 				2052D41E1AC75E3600865076 /* ProfileVC.h */,
 				2052D41F1AC75E3600865076 /* ProfileVC.m */,
 				E03923411AB9DC130086AE15 /* Main.storyboard */,
@@ -302,8 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202DBA471AE458A100913B85 /* ProfileCollectionViewCell.m in Sources */,
 				2052D4201AC75E3600865076 /* ProfileVC.m in Sources */,
 				2052D41D1AC75E0800865076 /* YearSelectionTableViewCell.m in Sources */,
+				202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */,
 				E039233D1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld in Sources */,
 				E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */,
 				E06497691AC0E10D0065BB0A /* Person.m in Sources */,

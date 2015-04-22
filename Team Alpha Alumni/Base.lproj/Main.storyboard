@@ -188,7 +188,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="ohu-9O-33B" kind="push" id="tAr-jT-Hw3"/>
+                                                <segue destination="ohu-9O-33B" kind="push" identifier="ShowProfileCollection" id="tAr-jT-Hw3"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -210,29 +210,71 @@
             </objects>
             <point key="canvasLocation" x="1417" y="620"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Profile CollectionVC-->
         <scene sceneID="DBW-k1-60l">
             <objects>
-                <collectionViewController id="ohu-9O-33B" sceneMemberID="viewController">
+                <collectionViewController id="ohu-9O-33B" customClass="ProfileCollectionVC" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Wtd-uk-P3e">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rir-Wq-lJb">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="250" height="285"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1ps-vL-iJW">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="1ps-vL-iJW" customClass="ProfileCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="285"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCm-A5-1es">
+                                            <rect key="frame" x="0.0" y="-8" width="250" height="250"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1y-9I-fwe">
+                                            <rect key="frame" x="0.0" y="250" width="250" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="Jle-eQ-Gna"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.80392156859999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWI-o4-bNw">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="250" id="Kxu-fl-UwV"/>
+                                                <constraint firstAttribute="width" constant="250" id="dui-8D-iHV"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="iWI-o4-bNw" secondAttribute="trailing" constant="-8" id="0SO-kX-28K"/>
+                                    <constraint firstItem="O1y-9I-fwe" firstAttribute="leading" secondItem="1ps-vL-iJW" secondAttribute="leadingMargin" constant="-8" id="9MP-zH-dQM"/>
+                                    <constraint firstItem="iWI-o4-bNw" firstAttribute="top" secondItem="1ps-vL-iJW" secondAttribute="topMargin" constant="-8" id="BNW-3J-ldW"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="O1y-9I-fwe" secondAttribute="trailing" constant="-8" id="OIT-ID-mby"/>
+                                    <constraint firstItem="O1y-9I-fwe" firstAttribute="top" secondItem="iWI-o4-bNw" secondAttribute="bottom" id="Rr5-68-sqX"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="O1y-9I-fwe" secondAttribute="bottom" constant="-8" id="fjH-jr-xHr"/>
+                                    <constraint firstItem="iWI-o4-bNw" firstAttribute="leading" secondItem="1ps-vL-iJW" secondAttribute="leadingMargin" constant="-8" id="lm3-KD-D4M"/>
+                                    <constraint firstItem="O1y-9I-fwe" firstAttribute="top" secondItem="iWI-o4-bNw" secondAttribute="bottom" id="oIK-kP-rDZ"/>
+                                </constraints>
+                                <size key="customSize" width="250" height="285"/>
+                                <connections>
+                                    <outlet property="NameLabel" destination="O1y-9I-fwe" id="z6t-7h-3Ta"/>
+                                    <outlet property="ThumbnailButton" destination="iWI-o4-bNw" id="asM-CW-20F"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
