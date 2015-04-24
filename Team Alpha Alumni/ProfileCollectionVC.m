@@ -2,12 +2,13 @@
 //  ProfileCollectionVC.m
 //  Team Alpha Alumni
 //
-//  Created by JBravo on 4/19/15.
 //  Copyright (c) 2015 Awesome Inc. All rights reserved.
 //
 
 #import "ProfileCollectionVC.h"
 #import "ProfileCollectionViewCell.h"
+#import "Person.h"
+#import "ProfileVC.h"
 
 @interface ProfileCollectionVC ()
 
@@ -19,6 +20,11 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if ([self.selectedYear isEqualToNumber:[NSNumber numberWithInt:0]])
+        self.navigationItem.title = @"All TA Members Profile Selection";
+    else
+         self.navigationItem.title = [NSString stringWithFormat:@"TA Members of %@ Profile Selection", self.selectedYear];
     
     self.fullNames = [[NSMutableArray alloc] init];
     self.thumbnailURLs = [[NSMutableArray alloc] init];
@@ -51,15 +57,53 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    if ([identifier isEqualToString:@"ShowProfile"]) {
+        
+        //Finds index of selected button
+        CGPoint buttonPoint = [sender convertPoint:CGPointZero toView:self.collectionView];
+        NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:buttonPoint];
+
+        NSString *location = [self.filteredPeople[indexPath.row] objectForKey:@"location"];
+        
+        if ([location isEqualToString:@""])
+            return NO;
+    }
+    return YES;
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"ShowProfile"]) {
+        
+        //Finds index of selected button
+        CGPoint buttonPoint = [sender convertPoint:CGPointZero toView:self.collectionView];
+        NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:buttonPoint];
+        
+        ProfileVC *profileController = segue.destinationViewController;
+        profileController.Alumnus = [[Person alloc] init];
+        
+        //Collects data to be pushed onto the next view controller.
+        profileController.Alumnus.name = self.fullNames[indexPath.row];
+        profileController.Alumnus.role = [self.filteredPeople[indexPath.row] objectForKey:@"role"];
+        profileController.Alumnus.startYear = [self.filteredPeople[indexPath.row] objectForKey:@"year"];
+        profileController.Alumnus.location = [self.filteredPeople[indexPath.row] objectForKey:@"location"];
+        profileController.Alumnus.position = [self.filteredPeople[indexPath.row] objectForKey:@"work"];
+        profileController.Alumnus.photo = [self.filteredPeople[indexPath.row] objectForKey:@"fullRes"];
+        profileController.Alumnus.memory = [self.filteredPeople[indexPath.row] objectForKey:@"memory"];
+        profileController.Alumnus.experience = [self.filteredPeople[indexPath.row] objectForKey:@"experience"];
+        
+        //[self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+    }
 }
-*/
+
 
 #pragma mark <UICollectionViewDataSource>
 

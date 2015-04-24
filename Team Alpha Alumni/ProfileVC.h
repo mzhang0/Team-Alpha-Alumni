@@ -6,8 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
 
 @interface ProfileVC : UIViewController
+
+@property (strong, nonatomic) Person *Alumnus;
 
 @property (weak, nonatomic) IBOutlet UILabel *NameLabel;
 

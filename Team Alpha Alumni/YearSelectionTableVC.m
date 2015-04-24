@@ -158,6 +158,8 @@ static NSString * const reuseIdentifier = @"Cell";
             profileCollectionController.filteredPeople = [self.people filteredArrayUsingPredicate:yearMatch];
         }
         
+        profileCollectionController.selectedYear = year;
+        
         NSLog(@"%@", profileCollectionController.filteredPeople);
         
         [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
