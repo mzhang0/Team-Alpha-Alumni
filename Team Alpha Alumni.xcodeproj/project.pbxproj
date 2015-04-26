@@ -17,6 +17,7 @@
 		2052D41A1AC75DD700865076 /* YearSelectionTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D4191AC75DD700865076 /* YearSelectionTableVC.m */; };
 		2052D41D1AC75E0800865076 /* YearSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D41C1AC75E0800865076 /* YearSelectionTableViewCell.m */; };
 		2052D4201AC75E3600865076 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D41F1AC75E3600865076 /* ProfileVC.m */; };
+		2058BE5B1AEAE61900504D95 /* AsynchronousLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 2058BE5A1AEAE61900504D95 /* AsynchronousLoading.m */; };
 		205C81D71AC62FC500D97398 /* MapIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 205C81D61AC62FC500D97398 /* MapIcon.png */; };
 		205C81D91AC62FDB00D97398 /* ProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 205C81D81AC62FDB00D97398 /* ProfileIcon.png */; };
 		20C9D5491AD381BC002F7BA4 /* Exo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20C9D5481AD38169002F7BA4 /* Exo-Black.otf */; };
@@ -57,6 +58,8 @@
 		2052D41C1AC75E0800865076 /* YearSelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearSelectionTableViewCell.m; sourceTree = "<group>"; };
 		2052D41E1AC75E3600865076 /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		2052D41F1AC75E3600865076 /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
+		2058BE591AEAE61900504D95 /* AsynchronousLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsynchronousLoading.h; sourceTree = "<group>"; };
+		2058BE5A1AEAE61900504D95 /* AsynchronousLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynchronousLoading.m; sourceTree = "<group>"; };
 		205C81D61AC62FC500D97398 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
 		205C81D81AC62FDB00D97398 /* ProfileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileIcon.png; sourceTree = "<group>"; };
 		20C9D5481AD38169002F7BA4 /* Exo-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Black.otf"; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				202DDA771AC601F900F4DC5E /* assets */,
 				E03923381AB9DC130086AE15 /* AppDelegate.h */,
 				E03923391AB9DC130086AE15 /* AppDelegate.m */,
+				2058BE591AEAE61900504D95 /* AsynchronousLoading.h */,
+				2058BE5A1AEAE61900504D95 /* AsynchronousLoading.m */,
 				E06497671AC0E10D0065BB0A /* Person.h */,
 				E06497681AC0E10D0065BB0A /* Person.m */,
 				202DDA861AC608AC00F4DC5E /* HomeVC.h */,
@@ -317,6 +322,7 @@
 				2052D41D1AC75E0800865076 /* YearSelectionTableViewCell.m in Sources */,
 				202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */,
 				E039233D1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld in Sources */,
+				2058BE5B1AEAE61900504D95 /* AsynchronousLoading.m in Sources */,
 				E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */,
 				E06497691AC0E10D0065BB0A /* Person.m in Sources */,
 				2052D41A1AC75DD700865076 /* YearSelectionTableVC.m in Sources */,

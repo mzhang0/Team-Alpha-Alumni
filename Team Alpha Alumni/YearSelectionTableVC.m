@@ -2,11 +2,13 @@
 //  YearSelectionTableVC.m
 //  Team Alpha Alumni
 //
+//  Copyright (c) 2015 Awesome Inc. All rights reserved.
 //
 
 #import "YearSelectionTableVC.h"
 #import "YearSelectionTableViewCell.h"
 #import "ProfileCollectionVC.h"
+#import "AsynchronousLoading.h"
 
 @interface YearSelectionTableVC ()
 
@@ -19,25 +21,48 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"%@",self.people);
+    [self.yearSelectionTableActivityIndicator startAnimating];
     
-    NSMutableArray *yearCollection = [[NSMutableArray alloc] init];
-    
-    for (NSInteger i = 0; i < [self.people count]; i++) {
+    NSURL *url = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/m7sqrcem1cea5v1/Trial2.json"];
 
-        NSNumber *year = [self.people[i] objectForKey:@"year"];
-        [yearCollection addObject:year];
-    }
-    
-    [yearCollection addObject:[NSNumber numberWithInt:0]];
-    
-    //Removes duplicates.
-    self.years = [[NSSet setWithArray:yearCollection] allObjects];
-    
-    //Sorts array in descending order.
-    self.years = [[[self.years sortedArrayUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
-    
-    NSLog(@"%@", self.years);
+    [AsynchronousLoading loadDataFromJsonFileAtUrl:url completion:^(NSArray *fetchedData, NSError *error) {
+        
+        [self.yearSelectionTableActivityIndicator stopAnimating];
+        
+        if (!error) {
+            self.people = fetchedData;
+            NSLog(@"%@",self.people);
+            
+            NSMutableArray *yearCollection = [[NSMutableArray alloc] init];
+
+            for (NSDictionary *individual in self.people) {
+                NSNumber *year = [individual objectForKey:@"year"];
+                [yearCollection addObject:year];
+            }
+            
+            if (yearCollection.count > 0)
+                [yearCollection addObject:[NSNumber numberWithInt:0]];
+            
+            //Removes duplicates
+            self.years = [[NSSet setWithArray:yearCollection] allObjects];
+            
+            //Sorts array in descending order
+            self.years = [[[self.years sortedArrayUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
+            
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"Error: %@", error);
+            
+            //Displays that an error to the user
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:[error localizedDescription] message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+            
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -59,7 +84,6 @@ static NSString * const reuseIdentifier = @"Cell";
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -87,8 +111,6 @@ static NSString * const reuseIdentifier = @"Cell";
         NSString *newTitle = [NSString stringWithFormat:@"%@ Team Alpha Members", year];
         [cell.YearSelectionButton setTitle:newTitle forState:UIControlStateNormal];
     }
-    
-    
     return cell;
 }
 
@@ -148,7 +170,6 @@ static NSString * const reuseIdentifier = @"Cell";
         if ([year isEqualToNumber:[NSNumber numberWithInt:0]])
             profileCollectionController.filteredPeople = self.people;
         else {
-        
             NSPredicate *yearMatch = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *alumnusInformation, NSDictionary *bindings) {
             
                 NSNumber *startYear = [alumnusInformation objectForKey:@"year"];

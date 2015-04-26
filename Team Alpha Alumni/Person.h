@@ -16,6 +16,6 @@
 @property (weak, nonatomic) NSString *role;
 @property (weak, nonatomic) NSString *memory;
 @property (weak, nonatomic) NSString *experience;
-@property (weak, nonatomic) NSString *photo;
+@property (weak, nonatomic) NSURL *photo;
 
 @end

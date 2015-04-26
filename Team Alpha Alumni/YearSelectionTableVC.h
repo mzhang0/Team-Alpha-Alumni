@@ -9,6 +9,8 @@
 
 @interface YearSelectionTableVC : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *yearSelectionTableActivityIndicator;
+
 @property (strong, nonatomic) NSArray *people;
 @property (strong, nonatomic) NSArray *years;
 

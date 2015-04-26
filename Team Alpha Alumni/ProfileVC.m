@@ -6,6 +6,7 @@
 //
 
 #import "ProfileVC.h"
+#import "AsynchronousLoading.h"
 
 @interface ProfileVC ()
 
@@ -18,18 +19,14 @@
     
     self.navigationItem.title = [NSString stringWithFormat:@"%@'s Profile", self.Alumnus.name];
     
-    dispatch_queue_t queue = dispatch_queue_create("load profile image", 0);
-    dispatch_async(queue, ^{
-        
-        NSURL *url = [NSURL URLWithString:self.Alumnus.photo];
-        NSData *data = [[NSData alloc] initWithContentsOfURL:url];
-        UIImage *image = [[UIImage alloc] initWithData:data];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
+    NSURL *url = self.Alumnus.photo;
+    
+    [AsynchronousLoading loadImageFromUrl:url completion:^(UIImage *image, NSError *error){
+        if (!error)
             self.ProfileImage.image = image;
-        });
-    });
+        else
+            NSLog(@"Error: %@", error);
+    }];
     
     self.NameLabel.text = self.Alumnus.name;
     self.WorkLabel.text = self.Alumnus.position;
