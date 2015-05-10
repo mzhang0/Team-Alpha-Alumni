@@ -9,13 +9,14 @@
 
 @interface Person : NSObject
 
-@property (weak, nonatomic) NSString *name;
-@property (weak, nonatomic) NSString *location;
-@property (weak, nonatomic) NSString *position;
-@property (weak, nonatomic) NSNumber *startYear;
-@property (weak, nonatomic) NSString *role;
-@property (weak, nonatomic) NSString *memory;
-@property (weak, nonatomic) NSString *experience;
-@property (weak, nonatomic) NSURL *photo;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *location;
+@property (strong, nonatomic) NSString *position;
+@property (strong, nonatomic) NSNumber *startYear;
+@property (strong, nonatomic) NSString *role;
+@property (strong, nonatomic) NSString *memory;
+@property (strong, nonatomic) NSString *experience;
+@property (strong, nonatomic) NSString *thumbnail;
+@property (strong, nonatomic) NSString *photo;
 
 @end

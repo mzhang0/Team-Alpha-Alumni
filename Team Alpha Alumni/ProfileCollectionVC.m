@@ -9,7 +9,7 @@
 #import "ProfileCollectionViewCell.h"
 #import "Person.h"
 #import "ProfileVC.h"
-#import "AsynchronousLoading.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ProfileCollectionVC ()
 
@@ -26,20 +26,6 @@ static NSString * const reuseIdentifier = @"Cell";
         self.navigationItem.title = @"All TA Profile Selection";
     else
          self.navigationItem.title = [NSString stringWithFormat:@"%@ TA Profile Selection", self.selectedYear];
-    
-    self.fullNames = [[NSMutableArray alloc] init];
-    self.thumbnailURLs = [[NSMutableArray alloc] init];
-    self.thumbnailCache = [[NSCache alloc] init];
-    
-    for (NSDictionary *individual in self.filteredPeople) {
-        NSURL *url = [NSURL URLWithString:[individual objectForKey:@"thumbnail"]];
-        
-        NSString *firstName = [individual objectForKey:@"first"];
-        NSString *lastName = [individual objectForKey:@"last"];
-        
-        [self.thumbnailURLs addObject:url];
-        [self.fullNames addObject:[NSString stringWithFormat: @"%@ %@", firstName, lastName]];
-    }
     
     NSLog(@"%@", self.filteredPeople);
     
@@ -61,13 +47,14 @@ static NSString * const reuseIdentifier = @"Cell";
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     
     if ([identifier isEqualToString:@"ShowProfile"]) {
+        
         //Finds index of selected button
         CGPoint buttonPoint = [sender convertPoint:CGPointZero toView:self.collectionView];
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:buttonPoint];
-
-        NSString *location = [self.filteredPeople[indexPath.row] objectForKey:@"location"];
         
-        if ([location isEqualToString:@""])
+        Person *individual = self.filteredPeople[indexPath.row];
+        
+        if ([individual.location isEqualToString:@""])
             return NO;
     }
     return YES;
@@ -84,17 +71,7 @@ static NSString * const reuseIdentifier = @"Cell";
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:buttonPoint];
         
         ProfileVC *profileController = segue.destinationViewController;
-        profileController.Alumnus = [[Person alloc] init];
-        
-        //Collects data to be pushed onto the next view controller.
-        profileController.Alumnus.name = self.fullNames[indexPath.row];
-        profileController.Alumnus.photo = self.thumbnailURLs[indexPath.row];
-        profileController.Alumnus.role = [self.filteredPeople[indexPath.row] objectForKey:@"role"];
-        profileController.Alumnus.startYear = [self.filteredPeople[indexPath.row] objectForKey:@"year"];
-        profileController.Alumnus.location = [self.filteredPeople[indexPath.row] objectForKey:@"location"];
-        profileController.Alumnus.position = [self.filteredPeople[indexPath.row] objectForKey:@"work"];
-        profileController.Alumnus.memory = [self.filteredPeople[indexPath.row] objectForKey:@"memory"];
-        profileController.Alumnus.experience = [self.filteredPeople[indexPath.row] objectForKey:@"experience"];
+        profileController.alumnus = self.filteredPeople[indexPath.row];
     }
 }
 
@@ -113,27 +90,23 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     ProfileCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    NSString *thumbnailName = [NSString stringWithFormat:@"%@ thumb", self.fullNames[indexPath.row]];
+    Person *individual = self.filteredPeople[indexPath.row];
     
     // Configure the cell
     
-    cell.NameLabel.text = [self.fullNames objectAtIndex:indexPath.row];
-    [cell.ThumbnailButton setBackgroundImage:nil forState:UIControlStateNormal];
-
-    if ([self.thumbnailCache objectForKey:thumbnailName] != nil)
-        [cell.ThumbnailButton setBackgroundImage:[self.thumbnailCache objectForKey:thumbnailName] forState:UIControlStateNormal];
-    else {
-        NSURL *url = [self.thumbnailURLs objectAtIndex:indexPath.row];
-        [AsynchronousLoading loadImageFromUrl:url completion:^(UIImage *image, NSError *error){
-            
-            if (!error) {
+    cell.NameLabel.text = individual.name;
+    
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    NSURL *url = [NSURL URLWithString:individual.thumbnail];
+    
+    [manager downloadImageWithURL:url options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {}
+        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        
+            if (image)
                 [cell.ThumbnailButton setBackgroundImage:image forState:UIControlStateNormal];
-                [self.thumbnailCache setObject:image forKey:thumbnailName];
-            }
-            else
-                NSLog(@"Error: %@", error);
         }];
-    }
+    
+    
     return cell;
 }
 

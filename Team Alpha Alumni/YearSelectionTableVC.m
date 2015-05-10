@@ -8,7 +8,8 @@
 #import "YearSelectionTableVC.h"
 #import "YearSelectionTableViewCell.h"
 #import "ProfileCollectionVC.h"
-#import "AsynchronousLoading.h"
+#import "Person.h"
+#import <RestKit/RestKit.h>
 
 @interface YearSelectionTableVC ()
 
@@ -23,51 +24,76 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [self.yearSelectionTableActivityIndicator startAnimating];
     
-    NSURL *url = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/m7sqrcem1cea5v1/Trial2.json"];
-
-    [AsynchronousLoading loadDataFromJsonFileAtUrl:url completion:^(NSArray *fetchedData, NSError *error) {
-        
-        [self.yearSelectionTableActivityIndicator stopAnimating];
-        
-        if (!error) {
-            self.people = fetchedData;
-            NSLog(@"%@",self.people);
-            
-            NSMutableArray *yearCollection = [[NSMutableArray alloc] init];
-
-            for (NSDictionary *individual in self.people) {
-                NSNumber *year = [individual objectForKey:@"year"];
-                [yearCollection addObject:year];
-            }
-            
-            if (yearCollection.count > 0)
-                [yearCollection addObject:[NSNumber numberWithInt:0]];
-            
-            //Removes duplicates
-            self.years = [[NSSet setWithArray:yearCollection] allObjects];
-            
-            //Sorts array in descending order
-            self.years = [[[self.years sortedArrayUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
-            
-            [self.tableView reloadData];
-        }
-        else {
-            NSLog(@"Error: %@", error);
-            
-            //Displays that an error to the user
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:[error localizedDescription] message:nil preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
-            
-            [alert addAction:okAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        }
-    }];
-
+    [self loadPeople];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)loadPeople {
+    
+    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/plain"];
+    
+    RKObjectMapping* personMapping = [RKObjectMapping mappingForClass:[Person class]];
+    [personMapping addAttributeMappingsFromDictionary:@{
+                                                         @"fullName": @"name",
+                                                         @"location": @"location",
+                                                         @"work": @"position",
+                                                         @"year": @"startYear",
+                                                         @"role": @"role",
+                                                         @"memory": @"memory",
+                                                         @"experience": @"experience",
+                                                         @"thumbnail": @"thumbnail",
+                                                         @"fullRes" : @"photo"
+                                                        }];
+    
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:personMapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSURL *URL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/9hk5g1mr558y0zy/Trial3a.json"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+            self.people = mappingResult.array;
+            RKLogInfo(@"Loaded people:\n %@", self.people);
+        
+            NSMutableArray *yearCollection = [[NSMutableArray alloc] init];
+
+            for (Person *individual in self.people)
+                [yearCollection addObject:individual.startYear];
+
+            if (yearCollection.count > 0)
+                [yearCollection addObject:[NSNumber numberWithInt:0]];
+
+            //Removes duplicates
+            self.years = [[NSSet setWithArray:yearCollection] allObjects];
+
+            //Sorts array in descending order
+            self.years = [[[self.years sortedArrayUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
+
+            [self.yearSelectionTableActivityIndicator stopAnimating];
+        
+            [self.tableView reloadData];
+        }
+
+        failure:^(RKObjectRequestOperation *operation, NSError *error) {
+          
+            [self.yearSelectionTableActivityIndicator stopAnimating];
+          
+            RKLogError(@"Error: %@", error);
+          
+            //Displays the error to the user
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:[error localizedDescription] message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+          
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }];
+
+    [objectRequestOperation start];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,8 +121,6 @@ static NSString * const reuseIdentifier = @"Cell";
     return self.years.count;
 }
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     YearSelectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
@@ -113,7 +137,6 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -170,18 +193,11 @@ static NSString * const reuseIdentifier = @"Cell";
         if ([year isEqualToNumber:[NSNumber numberWithInt:0]])
             profileCollectionController.filteredPeople = self.people;
         else {
-            NSPredicate *yearMatch = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *alumnusInformation, NSDictionary *bindings) {
-            
-                NSNumber *startYear = [alumnusInformation objectForKey:@"year"];
-                return [year isEqualToNumber:startYear];
-            }];
-        
-            profileCollectionController.filteredPeople = [self.people filteredArrayUsingPredicate:yearMatch];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"startYear == %@", year];
+            profileCollectionController.filteredPeople = [self.people filteredArrayUsingPredicate:predicate];
         }
         
         profileCollectionController.selectedYear = year;
-        
-        NSLog(@"%@", profileCollectionController.filteredPeople);
         
         [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     }

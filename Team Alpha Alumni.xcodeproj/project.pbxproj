@@ -9,18 +9,17 @@
 /* Begin PBXBuildFile section */
 		202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBA431AE4587B00913B85 /* ProfileCollectionVC.m */; };
 		202DBA471AE458A100913B85 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBA461AE458A100913B85 /* ProfileCollectionViewCell.m */; };
-		202DDA801AC601F900F4DC5E /* AwesomeIncLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 202DDA7A1AC601F900F4DC5E /* AwesomeIncLogo.png */; };
 		202DDA831AC601F900F4DC5E /* ProfilePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 202DDA7D1AC601F900F4DC5E /* ProfilePlaceholder.png */; };
-		202DDA841AC601F900F4DC5E /* TommyCrush.png in Resources */ = {isa = PBXBuildFile; fileRef = 202DDA7E1AC601F900F4DC5E /* TommyCrush.png */; };
-		202DDA851AC601F900F4DC5E /* WorkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 202DDA7F1AC601F900F4DC5E /* WorkIcon.png */; };
 		202DDA881AC608AC00F4DC5E /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DDA871AC608AC00F4DC5E /* HomeVC.m */; };
 		2052D41A1AC75DD700865076 /* YearSelectionTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D4191AC75DD700865076 /* YearSelectionTableVC.m */; };
 		2052D41D1AC75E0800865076 /* YearSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D41C1AC75E0800865076 /* YearSelectionTableViewCell.m */; };
 		2052D4201AC75E3600865076 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D41F1AC75E3600865076 /* ProfileVC.m */; };
-		2058BE5B1AEAE61900504D95 /* AsynchronousLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 2058BE5A1AEAE61900504D95 /* AsynchronousLoading.m */; };
-		205C81D71AC62FC500D97398 /* MapIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 205C81D61AC62FC500D97398 /* MapIcon.png */; };
-		205C81D91AC62FDB00D97398 /* ProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 205C81D81AC62FDB00D97398 /* ProfileIcon.png */; };
+		206106FC1AFC2EFC00A767C4 /* MapIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106F81AFC2EFC00A767C4 /* MapIcon.png */; };
+		206106FD1AFC2EFC00A767C4 /* ProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106F91AFC2EFC00A767C4 /* ProfileIcon.png */; };
+		206106FE1AFC2EFC00A767C4 /* WorkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106FA1AFC2EFC00A767C4 /* WorkIcon.png */; };
+		206B26C01AFD4AFC00EEC3DE /* AwesomeIncLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 206B26BF1AFD4AFC00EEC3DE /* AwesomeIncLogo.png */; };
 		20C9D5491AD381BC002F7BA4 /* Exo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20C9D5481AD38169002F7BA4 /* Exo-Black.otf */; };
+		664630F2F2F93CC4AF8B1F7F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3467F5EF2BC5F3B55A281AB /* libPods.a */; };
 		E03923371AB9DC130086AE15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E03923361AB9DC130086AE15 /* main.m */; };
 		E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E03923391AB9DC130086AE15 /* AppDelegate.m */; };
 		E039233D1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E039233B1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld */; };
@@ -46,10 +45,7 @@
 		202DBA431AE4587B00913B85 /* ProfileCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionVC.m; sourceTree = "<group>"; };
 		202DBA451AE458A100913B85 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
 		202DBA461AE458A100913B85 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
-		202DDA7A1AC601F900F4DC5E /* AwesomeIncLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AwesomeIncLogo.png; sourceTree = "<group>"; };
 		202DDA7D1AC601F900F4DC5E /* ProfilePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfilePlaceholder.png; sourceTree = "<group>"; };
-		202DDA7E1AC601F900F4DC5E /* TommyCrush.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TommyCrush.png; sourceTree = "<group>"; };
-		202DDA7F1AC601F900F4DC5E /* WorkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkIcon.png; sourceTree = "<group>"; };
 		202DDA861AC608AC00F4DC5E /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		202DDA871AC608AC00F4DC5E /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
 		2052D4181AC75DD700865076 /* YearSelectionTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearSelectionTableVC.h; sourceTree = "<group>"; };
@@ -58,11 +54,14 @@
 		2052D41C1AC75E0800865076 /* YearSelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearSelectionTableViewCell.m; sourceTree = "<group>"; };
 		2052D41E1AC75E3600865076 /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		2052D41F1AC75E3600865076 /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
-		2058BE591AEAE61900504D95 /* AsynchronousLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsynchronousLoading.h; sourceTree = "<group>"; };
-		2058BE5A1AEAE61900504D95 /* AsynchronousLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynchronousLoading.m; sourceTree = "<group>"; };
-		205C81D61AC62FC500D97398 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
-		205C81D81AC62FDB00D97398 /* ProfileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileIcon.png; sourceTree = "<group>"; };
+		206106F81AFC2EFC00A767C4 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
+		206106F91AFC2EFC00A767C4 /* ProfileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileIcon.png; sourceTree = "<group>"; };
+		206106FA1AFC2EFC00A767C4 /* WorkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkIcon.png; sourceTree = "<group>"; };
+		206B26BF1AFD4AFC00EEC3DE /* AwesomeIncLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AwesomeIncLogo.png; sourceTree = "<group>"; };
 		20C9D5481AD38169002F7BA4 /* Exo-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Black.otf"; sourceTree = "<group>"; };
+		595F55CDDA5760EFEA9B96A1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6C1D259D6126A656F6BD0F02 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D3467F5EF2BC5F3B55A281AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03923311AB9DC130086AE15 /* Team Alpha Alumni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team Alpha Alumni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03923351AB9DC130086AE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E03923361AB9DC130086AE15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664630F2F2F93CC4AF8B1F7F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,12 +117,11 @@
 		202DDA791AC601F900F4DC5E /* images */ = {
 			isa = PBXGroup;
 			children = (
-				202DDA7A1AC601F900F4DC5E /* AwesomeIncLogo.png */,
-				205C81D61AC62FC500D97398 /* MapIcon.png */,
-				205C81D81AC62FDB00D97398 /* ProfileIcon.png */,
+				206B26BF1AFD4AFC00EEC3DE /* AwesomeIncLogo.png */,
+				206106F81AFC2EFC00A767C4 /* MapIcon.png */,
+				206106F91AFC2EFC00A767C4 /* ProfileIcon.png */,
+				206106FA1AFC2EFC00A767C4 /* WorkIcon.png */,
 				202DDA7D1AC601F900F4DC5E /* ProfilePlaceholder.png */,
-				202DDA7E1AC601F900F4DC5E /* TommyCrush.png */,
-				202DDA7F1AC601F900F4DC5E /* WorkIcon.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -135,12 +134,31 @@
 			name = fonts;
 			sourceTree = "<group>";
 		};
+		9D7A3FC31B498DD5EBC32BC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C1D259D6126A656F6BD0F02 /* Pods.debug.xcconfig */,
+				595F55CDDA5760EFEA9B96A1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B52EA6733B786EEFA91A28D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3467F5EF2BC5F3B55A281AB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E03923281AB9DC130086AE15 = {
 			isa = PBXGroup;
 			children = (
 				E03923331AB9DC130086AE15 /* Team Alpha Alumni */,
 				E03923501AB9DC130086AE15 /* Team Alpha AlumniTests */,
 				E03923321AB9DC130086AE15 /* Products */,
+				9D7A3FC31B498DD5EBC32BC0 /* Pods */,
+				B52EA6733B786EEFA91A28D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,8 +177,6 @@
 				202DDA771AC601F900F4DC5E /* assets */,
 				E03923381AB9DC130086AE15 /* AppDelegate.h */,
 				E03923391AB9DC130086AE15 /* AppDelegate.m */,
-				2058BE591AEAE61900504D95 /* AsynchronousLoading.h */,
-				2058BE5A1AEAE61900504D95 /* AsynchronousLoading.m */,
 				E06497671AC0E10D0065BB0A /* Person.h */,
 				E06497681AC0E10D0065BB0A /* Person.m */,
 				202DDA861AC608AC00F4DC5E /* HomeVC.h */,
@@ -217,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E03923571AB9DC130086AE15 /* Build configuration list for PBXNativeTarget "Team Alpha Alumni" */;
 			buildPhases = (
+				9B18580ACC3ECC9E5FF9FCC2 /* Check Pods Manifest.lock */,
 				E039232D1AB9DC130086AE15 /* Sources */,
 				E039232E1AB9DC130086AE15 /* Frameworks */,
 				E039232F1AB9DC130086AE15 /* Resources */,
+				71BDA975D5D31991302B9326 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,15 +309,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				20C9D5491AD381BC002F7BA4 /* Exo-Black.otf in Resources */,
+				206106FE1AFC2EFC00A767C4 /* WorkIcon.png in Resources */,
+				206106FD1AFC2EFC00A767C4 /* ProfileIcon.png in Resources */,
 				E03923431AB9DC130086AE15 /* Main.storyboard in Resources */,
-				205C81D91AC62FDB00D97398 /* ProfileIcon.png in Resources */,
-				202DDA801AC601F900F4DC5E /* AwesomeIncLogo.png in Resources */,
 				E03923481AB9DC130086AE15 /* LaunchScreen.xib in Resources */,
-				202DDA841AC601F900F4DC5E /* TommyCrush.png in Resources */,
-				202DDA851AC601F900F4DC5E /* WorkIcon.png in Resources */,
-				205C81D71AC62FC500D97398 /* MapIcon.png in Resources */,
+				206106FC1AFC2EFC00A767C4 /* MapIcon.png in Resources */,
 				202DDA831AC601F900F4DC5E /* ProfilePlaceholder.png in Resources */,
 				E03923451AB9DC130086AE15 /* Images.xcassets in Resources */,
+				206B26C01AFD4AFC00EEC3DE /* AwesomeIncLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +329,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71BDA975D5D31991302B9326 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B18580ACC3ECC9E5FF9FCC2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E039232D1AB9DC130086AE15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -322,7 +372,6 @@
 				2052D41D1AC75E0800865076 /* YearSelectionTableViewCell.m in Sources */,
 				202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */,
 				E039233D1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld in Sources */,
-				2058BE5B1AEAE61900504D95 /* AsynchronousLoading.m in Sources */,
 				E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */,
 				E06497691AC0E10D0065BB0A /* Person.m in Sources */,
 				2052D41A1AC75DD700865076 /* YearSelectionTableVC.m in Sources */,
@@ -449,6 +498,7 @@
 		};
 		E03923581AB9DC130086AE15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C1D259D6126A656F6BD0F02 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Team Alpha Alumni/Info.plist";
@@ -459,6 +509,7 @@
 		};
 		E03923591AB9DC130086AE15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 595F55CDDA5760EFEA9B96A1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Team Alpha Alumni/Info.plist";

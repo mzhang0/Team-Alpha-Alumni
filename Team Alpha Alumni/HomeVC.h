@@ -9,6 +9,4 @@
 
 @interface HomeVC : UIViewController
 
-@property (strong, nonatomic) NSArray *people;
-
 @end

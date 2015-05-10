@@ -6,7 +6,7 @@
 //
 
 #import "ProfileVC.h"
-#import "AsynchronousLoading.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ProfileVC ()
 
@@ -17,25 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = [NSString stringWithFormat:@"%@'s Profile", self.Alumnus.name];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@'s Profile", self.alumnus.name];
     
-    NSURL *url = self.Alumnus.photo;
+    NSURL *url = [NSURL URLWithString:self.alumnus.photo];
+    [self.ProfileImage sd_setImageWithURL:url placeholderImage:nil];
     
-    [AsynchronousLoading loadImageFromUrl:url completion:^(UIImage *image, NSError *error){
-        if (!error)
-            self.ProfileImage.image = image;
-        else
-            NSLog(@"Error: %@", error);
-    }];
+    self.NameLabel.text = self.alumnus.name;
+    self.WorkLabel.text = self.alumnus.position;
+    self.RoleText.text = self.alumnus.role;
+    self.StartingYearText.text = [self.alumnus.startYear stringValue];
     
-    self.NameLabel.text = self.Alumnus.name;
-    self.WorkLabel.text = self.Alumnus.position;
-    self.RoleText.text = self.Alumnus.role;
-    self.StartingYearText.text = [self.Alumnus.startYear stringValue];
-    
-    self.LocationText.text = self.Alumnus.location;
-    self.FavoriteMemoryText.text = self.Alumnus.memory;
-    self.ExperienceText.text = self.Alumnus.experience;
+    self.LocationText.text = self.alumnus.location;
+    self.FavoriteMemoryText.text = self.alumnus.memory;
+    self.ExperienceText.text = self.alumnus.experience;
 }
 
 - (void)didReceiveMemoryWarning {

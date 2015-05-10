@@ -10,7 +10,7 @@
 
 @interface ProfileVC : UIViewController
 
-@property (strong, nonatomic) Person *Alumnus;
+@property (strong, nonatomic) Person *alumnus;
 
 @property (weak, nonatomic) IBOutlet UILabel *NameLabel;
 
