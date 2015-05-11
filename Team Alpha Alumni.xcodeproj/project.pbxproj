@@ -14,6 +14,9 @@
 		2052D41A1AC75DD700865076 /* YearSelectionTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D4191AC75DD700865076 /* YearSelectionTableVC.m */; };
 		2052D41D1AC75E0800865076 /* YearSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D41C1AC75E0800865076 /* YearSelectionTableViewCell.m */; };
 		2052D4201AC75E3600865076 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2052D41F1AC75E3600865076 /* ProfileVC.m */; };
+		2059B78A1AFFBFE800CFC3BA /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2059B7891AFFBFE800CFC3BA /* MapVC.m */; };
+		2059B78C1AFFC95D00CFC3BA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2059B78B1AFFC95D00CFC3BA /* MapKit.framework */; };
+		205B75611B0007FA005A00D7 /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 205B75601B0007FA005A00D7 /* MapViewAnnotation.m */; };
 		206106FC1AFC2EFC00A767C4 /* MapIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106F81AFC2EFC00A767C4 /* MapIcon.png */; };
 		206106FD1AFC2EFC00A767C4 /* ProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106F91AFC2EFC00A767C4 /* ProfileIcon.png */; };
 		206106FE1AFC2EFC00A767C4 /* WorkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106FA1AFC2EFC00A767C4 /* WorkIcon.png */; };
@@ -54,6 +57,11 @@
 		2052D41C1AC75E0800865076 /* YearSelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearSelectionTableViewCell.m; sourceTree = "<group>"; };
 		2052D41E1AC75E3600865076 /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		2052D41F1AC75E3600865076 /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
+		2059B7881AFFBFE800CFC3BA /* MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapVC.h; sourceTree = "<group>"; };
+		2059B7891AFFBFE800CFC3BA /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
+		2059B78B1AFFC95D00CFC3BA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		205B755F1B0007FA005A00D7 /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		205B75601B0007FA005A00D7 /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
 		206106F81AFC2EFC00A767C4 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
 		206106F91AFC2EFC00A767C4 /* ProfileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileIcon.png; sourceTree = "<group>"; };
 		206106FA1AFC2EFC00A767C4 /* WorkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkIcon.png; sourceTree = "<group>"; };
@@ -83,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2059B78C1AFFC95D00CFC3BA /* MapKit.framework in Frameworks */,
 				664630F2F2F93CC4AF8B1F7F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +155,7 @@
 		B52EA6733B786EEFA91A28D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2059B78B1AFFC95D00CFC3BA /* MapKit.framework */,
 				D3467F5EF2BC5F3B55A281AB /* libPods.a */,
 			);
 			name = Frameworks;
@@ -191,6 +201,10 @@
 				202DBA461AE458A100913B85 /* ProfileCollectionViewCell.m */,
 				2052D41E1AC75E3600865076 /* ProfileVC.h */,
 				2052D41F1AC75E3600865076 /* ProfileVC.m */,
+				2059B7881AFFBFE800CFC3BA /* MapVC.h */,
+				2059B7891AFFBFE800CFC3BA /* MapVC.m */,
+				205B755F1B0007FA005A00D7 /* MapViewAnnotation.h */,
+				205B75601B0007FA005A00D7 /* MapViewAnnotation.m */,
 				E03923411AB9DC130086AE15 /* Main.storyboard */,
 				E03923441AB9DC130086AE15 /* Images.xcassets */,
 				E03923461AB9DC130086AE15 /* LaunchScreen.xib */,
@@ -373,8 +387,10 @@
 				202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */,
 				E039233D1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld in Sources */,
 				E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */,
+				205B75611B0007FA005A00D7 /* MapViewAnnotation.m in Sources */,
 				E06497691AC0E10D0065BB0A /* Person.m in Sources */,
 				2052D41A1AC75DD700865076 /* YearSelectionTableVC.m in Sources */,
+				2059B78A1AFFBFE800CFC3BA /* MapVC.m in Sources */,
 				202DDA881AC608AC00F4DC5E /* HomeVC.m in Sources */,
 				E03923371AB9DC130086AE15 /* main.m in Sources */,
 			);

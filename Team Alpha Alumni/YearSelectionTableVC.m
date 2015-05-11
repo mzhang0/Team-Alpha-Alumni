@@ -57,41 +57,40 @@ static NSString * const reuseIdentifier = @"Cell";
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
-            self.people = mappingResult.array;
-            RKLogInfo(@"Loaded people:\n %@", self.people);
-        
-            NSMutableArray *yearCollection = [[NSMutableArray alloc] init];
+        self.people = mappingResult.array;
+        RKLogInfo(@"Loaded people:\n %@", self.people);
+    
+        NSMutableArray *yearCollection = [[NSMutableArray alloc] init];
 
-            for (Person *individual in self.people)
-                [yearCollection addObject:individual.startYear];
+        for (Person *individual in self.people)
+            [yearCollection addObject:individual.startYear];
 
-            if (yearCollection.count > 0)
-                [yearCollection addObject:[NSNumber numberWithInt:0]];
+        if (yearCollection.count > 0)
+            [yearCollection addObject:[NSNumber numberWithInt:0]];
 
-            //Removes duplicates
-            self.years = [[NSSet setWithArray:yearCollection] allObjects];
+        //Removes duplicates
+        self.years = [[NSSet setWithArray:yearCollection] allObjects];
 
-            //Sorts array in descending order
-            self.years = [[[self.years sortedArrayUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
+        //Sorts array in descending order
+        self.years = [[[self.years sortedArrayUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
 
-            [self.yearSelectionTableActivityIndicator stopAnimating];
-        
-            [self.tableView reloadData];
-        }
-
-        failure:^(RKObjectRequestOperation *operation, NSError *error) {
-          
-            [self.yearSelectionTableActivityIndicator stopAnimating];
-          
-            RKLogError(@"Error: %@", error);
-          
-            //Displays the error to the user
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:[error localizedDescription] message:nil preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
-          
-            [alert addAction:okAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        }];
+        [self.yearSelectionTableActivityIndicator stopAnimating];
+    
+        [self.tableView reloadData];
+    }
+    failure:^(RKObjectRequestOperation *operation, NSError *error) {
+      
+        [self.yearSelectionTableActivityIndicator stopAnimating];
+      
+        RKLogError(@"Error: %@", error);
+      
+        //Displays the error to the user
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[error localizedDescription] message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+      
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 
     [objectRequestOperation start];
 }

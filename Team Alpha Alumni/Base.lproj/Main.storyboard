@@ -67,6 +67,9 @@
                                         <state key="normal" title="Alpha Map" backgroundImage="MapIcon.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="hq5-bq-yTN" kind="push" id="9vs-L6-27A"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -151,6 +154,43 @@
             </objects>
             <point key="canvasLocation" x="563" y="620"/>
         </scene>
+        <!--Team Alpha Map-->
+        <scene sceneID="oCc-WW-WEn">
+            <objects>
+                <viewController title="Team Alpha Map" id="hq5-bq-yTN" customClass="MapVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JQa-Yt-WoC"/>
+                        <viewControllerLayoutGuide type="bottom" id="SHC-yb-dG5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="efO-sj-Vuw">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Zf-QR-vvo">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Zf-QR-vvo" firstAttribute="bottom" secondItem="SHC-yb-dG5" secondAttribute="top" id="MVG-cM-lci"/>
+                            <constraint firstItem="8Zf-QR-vvo" firstAttribute="leading" secondItem="efO-sj-Vuw" secondAttribute="leading" id="cwU-rv-Fxw"/>
+                            <constraint firstAttribute="trailing" secondItem="8Zf-QR-vvo" secondAttribute="trailing" id="l7D-Lx-h4q"/>
+                            <constraint firstItem="8Zf-QR-vvo" firstAttribute="top" secondItem="efO-sj-Vuw" secondAttribute="top" id="mhh-it-5mP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Team Alpha Map" id="two-Yp-ICc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="NH6-xA-FYw">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="MapView" destination="8Zf-QR-vvo" id="rhj-KB-9Ha"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yC-gz-Axt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1443" y="-470"/>
+        </scene>
         <!--Starting Year Selection-->
         <scene sceneID="Xa2-Vq-RO4">
             <objects>
@@ -210,7 +250,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hf1-MT-asw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="620"/>
+            <point key="canvasLocation" x="1443" y="620"/>
         </scene>
         <!--Profile CollectionVC-->
         <scene sceneID="DBW-k1-60l">
@@ -513,7 +553,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XzY-t5-j0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079" y="-490"/>
+            <point key="canvasLocation" x="1443" y="1706"/>
         </scene>
         <!--Team Alpha Members of 20xx Selection-->
         <scene sceneID="Tvc-CG-hx9">
@@ -592,7 +632,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iP6-av-4jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2979" y="-490"/>
+            <point key="canvasLocation" x="2261" y="1706"/>
         </scene>
         <!--Placeholder's Profile-->
         <scene sceneID="zgH-D1-cW0">
