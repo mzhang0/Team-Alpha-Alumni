@@ -107,13 +107,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="s39-iJ-aGg"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AwesomeIncLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="CTW-6m-Vgu">
-                                <rect key="frame" x="12" y="165" width="744" height="142"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="142" id="FfE-fv-rjM"/>
-                                    <constraint firstAttribute="width" constant="744" id="h45-Yl-vtk"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet our awesome Team Alpha alumni" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3R3-ex-jx3">
                                 <rect key="frame" x="180" y="315" width="409" height="21"/>
                                 <constraints>
@@ -124,6 +117,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AwesomeIncLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="CTW-6m-Vgu">
+                                <rect key="frame" x="12" y="165" width="744" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="FfE-fv-rjM"/>
+                                    <constraint firstAttribute="width" constant="744" id="h45-Yl-vtk"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -168,14 +168,31 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Zf-QR-vvo">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hq5-bq-yTN" id="vee-YX-xzf"/>
+                                </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ik7-La-43g">
+                                <rect key="frame" x="2000" y="2000" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="LeJ-e2-0F6"/>
+                                    <constraint firstAttribute="width" constant="1" id="b2v-Bx-5ar"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="Ik7-La-43g" secondAttribute="bottom" constant="-977" id="0Sx-59-lKh"/>
                             <constraint firstItem="8Zf-QR-vvo" firstAttribute="bottom" secondItem="SHC-yb-dG5" secondAttribute="top" id="MVG-cM-lci"/>
                             <constraint firstItem="8Zf-QR-vvo" firstAttribute="leading" secondItem="efO-sj-Vuw" secondAttribute="leading" id="cwU-rv-Fxw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ik7-La-43g" secondAttribute="trailing" constant="-1249" id="i1o-Su-ezE"/>
                             <constraint firstAttribute="trailing" secondItem="8Zf-QR-vvo" secondAttribute="trailing" id="l7D-Lx-h4q"/>
                             <constraint firstItem="8Zf-QR-vvo" firstAttribute="top" secondItem="efO-sj-Vuw" secondAttribute="top" id="mhh-it-5mP"/>
+                            <constraint firstItem="Ik7-La-43g" firstAttribute="leading" secondItem="efO-sj-Vuw" secondAttribute="leadingMargin" constant="1984" id="nDv-7E-6tw"/>
+                            <constraint firstItem="Ik7-La-43g" firstAttribute="top" secondItem="efO-sj-Vuw" secondAttribute="topMargin" constant="2000" id="qtj-nP-0fZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Team Alpha Map" id="two-Yp-ICc">
@@ -185,11 +202,78 @@
                     </navigationItem>
                     <connections>
                         <outlet property="MapView" destination="8Zf-QR-vvo" id="rhj-KB-9Ha"/>
+                        <segue destination="edM-nB-LBP" kind="push" identifier="ShowProfileFromPopover" id="hsw-d3-avm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yC-gz-Axt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1443" y="-470"/>
+            <point key="canvasLocation" x="1443" y="-550"/>
+        </scene>
+        <!--Map Popover TableVC-->
+        <scene sceneID="yS5-ko-icg">
+            <objects>
+                <tableViewController storyboardIdentifier="ShowPopover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y9T-EP-CG5" customClass="MapPopoverTableVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vv9-lh-1a3">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="140"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="cvm-4s-QPa" customClass="MapPopoverTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cvm-4s-QPa" id="l6a-VE-K4l">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="piR-Zp-Qav">
+                                            <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="2aH-nA-ntv"/>
+                                                <constraint firstAttribute="height" constant="40" id="eGo-71-i1c"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXy-0N-L8q">
+                                            <rect key="frame" x="56" y="2" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvI-eR-REa">
+                                            <rect key="frame" x="56" y="28" width="42" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="vNx-3I-f89"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pXy-0N-L8q" firstAttribute="leading" secondItem="piR-Zp-Qav" secondAttribute="trailing" constant="8" id="3F8-Rl-mno"/>
+                                        <constraint firstItem="wvI-eR-REa" firstAttribute="top" secondItem="pXy-0N-L8q" secondAttribute="bottom" constant="5" id="aS4-cw-GP5"/>
+                                        <constraint firstItem="piR-Zp-Qav" firstAttribute="leading" secondItem="l6a-VE-K4l" secondAttribute="leadingMargin" id="crz-rY-9LH"/>
+                                        <constraint firstItem="wvI-eR-REa" firstAttribute="leading" secondItem="piR-Zp-Qav" secondAttribute="trailing" constant="8" id="nmo-Bm-tDq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wvI-eR-REa" secondAttribute="bottom" constant="-7" id="pQ5-Iy-7sS"/>
+                                        <constraint firstAttribute="centerY" secondItem="piR-Zp-Qav" secondAttribute="centerY" id="uWK-S7-NWW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="MapPopoverNameLabel" destination="pXy-0N-L8q" id="mnV-7F-dxe"/>
+                                    <outlet property="MapPopoverThumbnail" destination="piR-Zp-Qav" id="c6f-bQ-chl"/>
+                                    <outlet property="MapPopoverWorkLabel" destination="wvI-eR-REa" id="U3L-dI-5MM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Y9T-EP-CG5" id="J7r-tZ-Uf2"/>
+                            <outlet property="delegate" destination="Y9T-EP-CG5" id="1KX-AU-rhq"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="500" height="140"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRa-iS-7Hk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2127" y="-694"/>
         </scene>
         <!--Starting Year Selection-->
         <scene sceneID="Xa2-Vq-RO4">
@@ -313,326 +397,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1s-xo-rBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2261" y="620"/>
-        </scene>
-        <!--Starting Year Selection-->
-        <scene sceneID="lJQ-Yr-kVV">
-            <objects>
-                <tableViewController id="CjJ-xe-BGI" customClass="YearSelectionTableVC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oVS-NI-pCu">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexTrackingBackgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <sections>
-                            <tableViewSection id="qkh-5F-3lQ">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="rtQ-30-nPP" customClass="YearSelectionTableViewCell">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rtQ-30-nPP" id="HKp-pt-lf9">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4V-bO-XPi">
-                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="42" id="8LG-96-1eJ"/>
-                                                        <constraint firstAttribute="width" constant="299" id="WUe-4J-Ssf"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2015 Team Alpha Members">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="o4V-bO-XPi" secondAttribute="centerX" id="N5v-5M-rYi"/>
-                                                <constraint firstAttribute="centerY" secondItem="o4V-bO-XPi" secondAttribute="centerY" id="dVI-mP-ACT"/>
-                                                <constraint firstAttribute="centerX" secondItem="o4V-bO-XPi" secondAttribute="centerX" id="swV-rf-tdv"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="p8g-lS-cDp" customClass="YearSelectionTableViewCell">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p8g-lS-cDp" id="gVT-sa-elh">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-tH-7dX">
-                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="299" id="AjI-a8-29j"/>
-                                                        <constraint firstAttribute="height" constant="42" id="nRn-KX-1rj"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2014 Team Alpha Members">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="MKv-tH-7dX" secondAttribute="centerY" id="7Je-Hh-a2x"/>
-                                                <constraint firstAttribute="centerX" secondItem="MKv-tH-7dX" secondAttribute="centerX" id="hh3-fM-NUr"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="X1O-mm-Im3" customClass="YearSelectionTableViewCell">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X1O-mm-Im3" id="A3D-f2-6j9">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h15-ZC-aFs">
-                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="42" id="CLf-dU-CWU"/>
-                                                        <constraint firstAttribute="width" constant="299" id="cFf-do-njm"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2013 Team Alpha Members">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="h15-ZC-aFs" secondAttribute="centerX" id="J1g-YY-hgL"/>
-                                                <constraint firstAttribute="centerY" secondItem="h15-ZC-aFs" secondAttribute="centerY" id="hz8-wJ-E1R"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="kMr-jf-Tmm" customClass="YearSelectionTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kMr-jf-Tmm" id="V8u-Wb-4JG">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8EF-LX-MyQ">
-                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="42" id="lqt-4y-6xN"/>
-                                                        <constraint firstAttribute="width" constant="299" id="u8M-aW-nVG"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2012 Team Alpha Members">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="8EF-LX-MyQ" secondAttribute="centerY" id="EHL-Lj-EBg"/>
-                                                <constraint firstAttribute="centerX" secondItem="8EF-LX-MyQ" secondAttribute="centerX" id="UrI-fQ-em4"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="R9h-Ja-MYN" customClass="YearSelectionTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R9h-Ja-MYN" id="sHG-CF-AS9">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEO-9c-nKX">
-                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="299" id="4CO-QM-k0D"/>
-                                                        <constraint firstAttribute="height" constant="42" id="UJb-r4-kHZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2011 Team Alpha Members">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="SEO-9c-nKX" secondAttribute="centerY" id="eyB-zu-Lgf"/>
-                                                <constraint firstAttribute="centerX" secondItem="SEO-9c-nKX" secondAttribute="centerX" id="jtf-Jx-Xwo"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="pa2-b1-EEV" customClass="YearSelectionTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pa2-b1-EEV" id="Llb-mk-SaJ">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mog-eG-rrM">
-                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="299" id="SwP-3j-peH"/>
-                                                        <constraint firstAttribute="height" constant="42" id="dfk-lb-k6v"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2010 Team Alpha Members">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="Mog-eG-rrM" secondAttribute="centerX" id="Rx9-26-iZl"/>
-                                                <constraint firstAttribute="centerY" secondItem="Mog-eG-rrM" secondAttribute="centerY" id="tij-UX-KGT"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="4Ot-Q7-mwc" customClass="YearSelectionTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Ot-Q7-mwc" id="H7R-jE-2Af">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-k4-5zb">
-                                                    <rect key="frame" x="235" y="14" width="299" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="299" id="b40-ez-3V9"/>
-                                                        <constraint firstAttribute="height" constant="42" id="n6O-Oy-Hyu"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="2009 Team Alpha Members">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="ELb-k4-5zb" secondAttribute="centerY" id="EKC-e7-Vsp"/>
-                                                <constraint firstAttribute="centerX" secondItem="ELb-k4-5zb" secondAttribute="centerX" id="qFA-Ox-Lzd"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="TL0-GP-ch8" customClass="YearSelectionTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TL0-GP-ch8" id="wZ0-6o-yyK">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYz-km-5b7">
-                                                    <rect key="frame" x="249" y="14" width="271" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="42" id="Hfj-mh-ql7"/>
-                                                        <constraint firstAttribute="width" constant="271" id="KmT-ze-Lha"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="All Team Alpha Members">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="fYz-km-5b7" secondAttribute="centerY" id="3Te-os-7Ug"/>
-                                                <constraint firstAttribute="centerX" secondItem="fYz-km-5b7" secondAttribute="centerX" id="qxM-qV-Ktb"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="CjJ-xe-BGI" id="hsV-yD-dVi"/>
-                            <outlet property="delegate" destination="CjJ-xe-BGI" id="gnn-u1-izk"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Starting Year Selection" id="9Ba-J6-565">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="MVB-MO-L4x">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XzY-t5-j0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1443" y="1706"/>
-        </scene>
-        <!--Team Alpha Members of 20xx Selection-->
-        <scene sceneID="Tvc-CG-hx9">
-            <objects>
-                <viewController id="ifH-lr-Kud" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eB6-bm-hUo"/>
-                        <viewControllerLayoutGuide type="bottom" id="SNe-X3-FAK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ooq-Fu-FzZ">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zSe-wa-3fH">
-                                <rect key="frame" x="284" y="91" width="200" height="229"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQK-vn-lLm">
-                                        <rect key="frame" x="0.0" y="208" width="200" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" red="0.80392156859999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuL-zP-YBg">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                        <state key="normal" backgroundImage="ProfilePlaceholder.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Thd-Ff-b2W">
-                                <rect key="frame" x="34" y="91" width="200" height="229"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obq-uo-Bwo">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                        <state key="normal" backgroundImage="ProfilePlaceholder.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HE5-1K-aKs">
-                                        <rect key="frame" x="0.0" y="208" width="200" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" red="0.80392156859999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbF-E1-1XW">
-                                <rect key="frame" x="531" y="91" width="200" height="229"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6I-wj-T7t">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                        <state key="normal" backgroundImage="ProfilePlaceholder.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F51-cv-K46">
-                                        <rect key="frame" x="0.0" y="208" width="200" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" red="0.80392156859999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Team Alpha Members of 20xx Selection" id="JEe-aE-9Ff">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="e7p-hR-q15">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iP6-av-4jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2261" y="1706"/>
         </scene>
         <!--Placeholder's Profile-->
         <scene sceneID="zgH-D1-cW0">
@@ -848,4 +612,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="hsw-d3-avm"/>
+    </inferredMetricsTieBreakers>
 </document>

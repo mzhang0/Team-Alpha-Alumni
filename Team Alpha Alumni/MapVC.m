@@ -8,6 +8,7 @@
 #import "Person.h"
 #import "MapVC.h"
 #import "MapViewAnnotation.h"
+#import "MapPopoverTableVC.h"
 #import <RestKit/RestKit.h>
 #import <MapKit/MapKit.h>
 
@@ -64,11 +65,6 @@
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"location MATCHES %@", location];
             NSArray *filteredPeople = [self.people filteredArrayUsingPredicate:predicate];
             
-            NSMutableString *formattedSubtitle = [[NSMutableString alloc] init];
-            
-            for (Person *individual in filteredPeople)
-                [formattedSubtitle appendFormat:@"%@ - %@\n\n", individual.name, individual.position];
-            
             CLGeocoder *geocoder = [[CLGeocoder alloc] init];
             
             [geocoder geocodeAddressString:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -80,8 +76,7 @@
                     CLPlacemark *placemark = [placemarks firstObject];
                     
                     poi.coordinate = placemark.location.coordinate;
-                    poi.title = location;
-                    poi.subtitle = formattedSubtitle;
+                    poi.peopleLivingHere = filteredPeople;
                     
                     [self.MapView addAnnotation:poi];
                 }
@@ -108,13 +103,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Delegate Methods
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    
+    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Location"];
+    annotationView.canShowCallout = NO;
+    
+    return annotationView;
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    
+    [mapView deselectAnnotation:view.annotation animated:YES];
+    
+    MapPopoverTableVC *mapPopoverTableController = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowPopover"];
+    self.popover = [[UIPopoverController alloc] initWithContentViewController:mapPopoverTableController];
+    self.popover.delegate = self;
+    
+    MapViewAnnotation *locationAnnotation = view.annotation;
+    
+    mapPopoverTableController.residents = locationAnnotation.peopleLivingHere;
+    
+    [self.popover presentPopoverFromRect:view.frame inView:view.superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
 /*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
+    
 }
 */
 

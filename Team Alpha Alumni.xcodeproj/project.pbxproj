@@ -21,6 +21,8 @@
 		206106FD1AFC2EFC00A767C4 /* ProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106F91AFC2EFC00A767C4 /* ProfileIcon.png */; };
 		206106FE1AFC2EFC00A767C4 /* WorkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106FA1AFC2EFC00A767C4 /* WorkIcon.png */; };
 		206B26C01AFD4AFC00EEC3DE /* AwesomeIncLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 206B26BF1AFD4AFC00EEC3DE /* AwesomeIncLogo.png */; };
+		20ADB5021B0160F70017DF59 /* MapPopoverTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ADB5011B0160F70017DF59 /* MapPopoverTableVC.m */; };
+		20ADB5051B017EED0017DF59 /* MapPopoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ADB5041B017EED0017DF59 /* MapPopoverTableViewCell.m */; };
 		20C9D5491AD381BC002F7BA4 /* Exo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20C9D5481AD38169002F7BA4 /* Exo-Black.otf */; };
 		664630F2F2F93CC4AF8B1F7F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3467F5EF2BC5F3B55A281AB /* libPods.a */; };
 		E03923371AB9DC130086AE15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E03923361AB9DC130086AE15 /* main.m */; };
@@ -66,6 +68,10 @@
 		206106F91AFC2EFC00A767C4 /* ProfileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileIcon.png; sourceTree = "<group>"; };
 		206106FA1AFC2EFC00A767C4 /* WorkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkIcon.png; sourceTree = "<group>"; };
 		206B26BF1AFD4AFC00EEC3DE /* AwesomeIncLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AwesomeIncLogo.png; sourceTree = "<group>"; };
+		20ADB5001B0160F70017DF59 /* MapPopoverTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPopoverTableVC.h; sourceTree = "<group>"; };
+		20ADB5011B0160F70017DF59 /* MapPopoverTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPopoverTableVC.m; sourceTree = "<group>"; };
+		20ADB5031B017EED0017DF59 /* MapPopoverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPopoverTableViewCell.h; sourceTree = "<group>"; };
+		20ADB5041B017EED0017DF59 /* MapPopoverTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPopoverTableViewCell.m; sourceTree = "<group>"; };
 		20C9D5481AD38169002F7BA4 /* Exo-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Black.otf"; sourceTree = "<group>"; };
 		595F55CDDA5760EFEA9B96A1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6C1D259D6126A656F6BD0F02 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +211,10 @@
 				2059B7891AFFBFE800CFC3BA /* MapVC.m */,
 				205B755F1B0007FA005A00D7 /* MapViewAnnotation.h */,
 				205B75601B0007FA005A00D7 /* MapViewAnnotation.m */,
+				20ADB5001B0160F70017DF59 /* MapPopoverTableVC.h */,
+				20ADB5011B0160F70017DF59 /* MapPopoverTableVC.m */,
+				20ADB5031B017EED0017DF59 /* MapPopoverTableViewCell.h */,
+				20ADB5041B017EED0017DF59 /* MapPopoverTableViewCell.m */,
 				E03923411AB9DC130086AE15 /* Main.storyboard */,
 				E03923441AB9DC130086AE15 /* Images.xcassets */,
 				E03923461AB9DC130086AE15 /* LaunchScreen.xib */,
@@ -387,6 +397,8 @@
 				202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */,
 				E039233D1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld in Sources */,
 				E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */,
+				20ADB5051B017EED0017DF59 /* MapPopoverTableViewCell.m in Sources */,
+				20ADB5021B0160F70017DF59 /* MapPopoverTableVC.m in Sources */,
 				205B75611B0007FA005A00D7 /* MapViewAnnotation.m in Sources */,
 				E06497691AC0E10D0065BB0A /* Person.m in Sources */,
 				2052D41A1AC75DD700865076 /* YearSelectionTableVC.m in Sources */,

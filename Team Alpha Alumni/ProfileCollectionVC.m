@@ -94,8 +94,6 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Configure the cell
     
-    cell.NameLabel.text = individual.name;
-    
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
     NSURL *url = [NSURL URLWithString:individual.thumbnail];
     
@@ -106,6 +104,7 @@ static NSString * const reuseIdentifier = @"Cell";
                 [cell.ThumbnailButton setBackgroundImage:image forState:UIControlStateNormal];
         }];
     
+    cell.NameLabel.text = individual.name;
     
     return cell;
 }

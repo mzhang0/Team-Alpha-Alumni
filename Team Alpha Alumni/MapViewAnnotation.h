@@ -11,7 +11,6 @@
 @interface MapViewAnnotation : NSObject <MKAnnotation>
 
 @property (nonatomic, readwrite) CLLocationCoordinate2D coordinate;
-@property (nonatomic, readwrite, copy) NSString *title;
-@property (nonatomic, readwrite, copy) NSString *subtitle;
+@property (nonatomic, strong) NSArray *peopleLivingHere;
 
 @end
