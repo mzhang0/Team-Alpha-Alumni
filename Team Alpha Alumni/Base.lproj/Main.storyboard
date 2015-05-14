@@ -39,8 +39,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERM-9L-n4a">
-                                <rect key="frame" x="532" y="463" width="220" height="220"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERM-9L-n4a">
+                                <rect key="frame" x="532" y="409" width="220" height="220"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgm-4r-EFr">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
@@ -51,14 +51,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="HZ0-BM-RUn"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="P5l-ct-nW4"/>
-                                    <constraint firstAttribute="width" constant="220" id="dwY-9e-g8t"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="l1A-XC-Wfo"/>
+                                    <constraint firstAttribute="width" constant="220" id="mGk-5L-g4T"/>
+                                    <constraint firstAttribute="height" constant="220" id="nn1-dc-F6F"/>
                                 </constraints>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iin-kn-SOX">
-                                <rect key="frame" x="274" y="463" width="220" height="220"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iin-kn-SOX">
+                                <rect key="frame" x="274" y="409" width="220" height="220"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j75-jI-s2g">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
@@ -74,37 +72,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="8Z1-QC-eRg"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="GAu-4g-AjD"/>
-                                    <constraint firstAttribute="width" constant="220" id="NCD-AH-G72"/>
-                                    <constraint firstAttribute="height" constant="220" id="bQZ-Mx-zW0"/>
-                                </constraints>
-                            </view>
-                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qf8-gK-T5Z">
-                                <rect key="frame" x="16" y="463" width="220" height="220"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGE-OZ-FQh">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" none="YES" button="YES" staticText="YES"/>
-                                        </accessibility>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="-50" maxX="0.0" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="190" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Alumni Profiles" backgroundImage="ProfileIcon.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="O5c-OK-GVJ" kind="push" identifier="ShowYearSelection" id="2dL-Px-c6O"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="QMh-No-SVe"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="XT2-Nn-UwU"/>
-                                    <constraint firstAttribute="width" constant="220" id="dhl-7l-3vb"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="s39-iJ-aGg"/>
+                                    <constraint firstAttribute="height" constant="220" id="4Qc-bQ-IFT"/>
+                                    <constraint firstAttribute="width" constant="220" id="GfJ-nK-R0I"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet our awesome Team Alpha alumni" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3R3-ex-jx3">
@@ -124,24 +93,44 @@
                                     <constraint firstAttribute="width" constant="744" id="h45-Yl-vtk"/>
                                 </constraints>
                             </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qf8-gK-T5Z">
+                                <rect key="frame" x="16" y="409" width="220" height="220"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGE-OZ-FQh">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES" button="YES" staticText="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="-50" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="190" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Alumni Profiles" backgroundImage="ProfileIcon.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="O5c-OK-GVJ" kind="push" identifier="ShowYearSelection" id="2dL-Px-c6O"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="ftQ-bd-rNF"/>
+                                    <constraint firstAttribute="height" constant="220" id="nWZ-am-8eE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iin-kn-SOX" firstAttribute="leading" secondItem="qf8-gK-T5Z" secondAttribute="trailing" constant="38" id="0sE-zA-KVz"/>
                             <constraint firstItem="3R3-ex-jx3" firstAttribute="top" secondItem="CTW-6m-Vgu" secondAttribute="bottom" constant="8" id="4gS-74-IUt"/>
-                            <constraint firstItem="ERM-9L-n4a" firstAttribute="leading" secondItem="iin-kn-SOX" secondAttribute="trailing" constant="38" id="COJ-Z2-3LU"/>
-                            <constraint firstItem="ERM-9L-n4a" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="180" id="DtX-ma-0XT"/>
-                            <constraint firstItem="qf8-gK-T5Z" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="180" id="G10-JP-y4a"/>
-                            <constraint firstAttribute="centerX" secondItem="iin-kn-SOX" secondAttribute="centerX" id="RAb-Xl-h0p"/>
-                            <constraint firstItem="iin-kn-SOX" firstAttribute="leading" secondItem="qf8-gK-T5Z" secondAttribute="trailing" constant="38" id="eHr-wF-ION"/>
+                            <constraint firstItem="iin-kn-SOX" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="73" id="GQq-gg-2EX"/>
+                            <constraint firstItem="ERM-9L-n4a" firstAttribute="leading" secondItem="iin-kn-SOX" secondAttribute="trailing" constant="38" id="R21-rz-Y5E"/>
+                            <constraint firstItem="iin-kn-SOX" firstAttribute="leading" secondItem="qf8-gK-T5Z" secondAttribute="trailing" constant="38" id="Xhs-DN-Suu"/>
                             <constraint firstItem="CTW-6m-Vgu" firstAttribute="top" secondItem="sFO-pW-ZCQ" secondAttribute="bottom" constant="101" id="ehT-kp-U4j"/>
-                            <constraint firstItem="ERM-9L-n4a" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="180" id="i5W-NR-g4t"/>
-                            <constraint firstItem="iin-kn-SOX" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="180" id="ivc-Vt-qeR"/>
                             <constraint firstAttribute="centerX" secondItem="CTW-6m-Vgu" secondAttribute="centerX" id="oMj-EY-1cu"/>
-                            <constraint firstItem="iin-kn-SOX" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="180" id="sx1-VJ-tfV"/>
-                            <constraint firstItem="ERM-9L-n4a" firstAttribute="leading" secondItem="iin-kn-SOX" secondAttribute="trailing" constant="38" id="uMo-xt-UfF"/>
+                            <constraint firstAttribute="centerX" secondItem="iin-kn-SOX" secondAttribute="centerX" id="p2s-Uv-XAm"/>
+                            <constraint firstItem="ERM-9L-n4a" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="73" id="scj-zM-6of"/>
+                            <constraint firstItem="qf8-gK-T5Z" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="73" id="uqg-R3-mUY"/>
                             <constraint firstAttribute="centerX" secondItem="3R3-ex-jx3" secondAttribute="centerX" id="v03-kW-iOP"/>
-                            <constraint firstItem="qf8-gK-T5Z" firstAttribute="top" secondItem="3R3-ex-jx3" secondAttribute="bottom" constant="180" id="vqb-BI-4v0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="uNO-Ev-6Dv">
