@@ -48,7 +48,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    Person *individual = self.residents[0];
+    Person *individual = [self.residents firstObject];
     return individual.location;
 }
 
@@ -72,7 +72,7 @@
     
     cell.MapPopoverNameLabel.text = individual.name;
     
-    cell.MapPopoverWorkLabel.text = individual.position;
+    cell.MapPopoverWorkLabel.text = [[individual.position componentsSeparatedByString:@", "] firstObject];
     
     return cell;
 }
