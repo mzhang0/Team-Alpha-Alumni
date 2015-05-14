@@ -5,12 +5,11 @@
 //  Copyright (c) 2015 Awesome Inc. All rights reserved.
 //
 
-#import "Person.h"
 #import "MapVC.h"
 #import "MapViewAnnotation.h"
 #import "MapPopoverTableVC.h"
+#import "ProfileVC.h"
 #import <RestKit/RestKit.h>
-#import <MapKit/MapKit.h>
 
 @interface MapVC ()
 
@@ -124,17 +123,23 @@
     MapViewAnnotation *locationAnnotation = view.annotation;
     
     mapPopoverTableController.residents = locationAnnotation.peopleLivingHere;
+    mapPopoverTableController.mapViewController = self;
     
     [self.popover presentPopoverFromRect:view.frame inView:view.superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
     
+    if ([segue.identifier isEqualToString:@"ShowProfileFromPopover"]) {
+        
+        ProfileVC *profileViewController = segue.destinationViewController;
+        profileViewController.alumnus = self.selectedPerson;
+
+        [self.popover dismissPopoverAnimated:NO];
+    }
 }
-*/
 
 @end

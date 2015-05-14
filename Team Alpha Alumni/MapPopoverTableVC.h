@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MapViewAnnotation.h"
+#import "MapVC.h"
 
 @interface MapPopoverTableVC : UITableViewController
 
 @property (strong, nonatomic) NSArray *residents;
+@property (strong, nonatomic) MapVC *mapViewController;
 
 @end

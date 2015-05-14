@@ -48,6 +48,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
     Person *individual = [self.residents firstObject];
     return individual.location;
 }
@@ -75,6 +76,12 @@
     cell.MapPopoverWorkLabel.text = [[individual.position componentsSeparatedByString:@", "] firstObject];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.mapViewController.selectedPerson = self.residents[indexPath.row];
+    [self.mapViewController performSegueWithIdentifier:@"ShowProfileFromPopover" sender:self];
 }
 
 /*
