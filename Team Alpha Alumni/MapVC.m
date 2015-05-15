@@ -116,11 +116,29 @@
     
     [mapView deselectAnnotation:view.annotation animated:YES];
     
+    MapViewAnnotation *locationAnnotation = view.annotation;
+    
     MapPopoverTableVC *mapPopoverTableController = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowPopover"];
+    
+    CGFloat height;
+    
+    switch (locationAnnotation.peopleLivingHere.count) {
+        case (NSUInteger)1:
+            height = 66;
+            break;
+        case (NSUInteger)2:
+            height = 110;
+            break;
+        case (NSUInteger)3:
+            height = 154;
+            break;
+        default:
+            height = 211;
+    }
+    
+    mapPopoverTableController.preferredContentSize = CGSizeMake(500, height);
     self.popover = [[UIPopoverController alloc] initWithContentViewController:mapPopoverTableController];
     self.popover.delegate = self;
-    
-    MapViewAnnotation *locationAnnotation = view.annotation;
     
     mapPopoverTableController.residents = locationAnnotation.peopleLivingHere;
     mapPopoverTableController.mapViewController = self;

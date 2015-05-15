@@ -203,7 +203,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="ShowPopover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y9T-EP-CG5" customClass="MapPopoverTableVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vv9-lh-1a3">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="211"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -258,7 +258,7 @@
                         </connections>
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="500" height="140"/>
+                    <size key="freeformSize" width="500" height="211"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRa-iS-7Hk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
