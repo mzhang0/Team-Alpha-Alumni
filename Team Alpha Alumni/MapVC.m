@@ -31,7 +31,7 @@
     [personMapping addAttributeMappingsFromDictionary:@{
                                                         @"fullName": @"name",
                                                         @"location": @"location",
-                                                        @"work": @"position",
+                                                        @"work": @"work",
                                                         @"year": @"startYear",
                                                         @"role": @"role",
                                                         @"memory": @"memory",
@@ -42,7 +42,7 @@
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:personMapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    NSURL *URL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/qvtgyrroizbfzti/Trial3b.json"];
+    NSURL *URL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/92ricd41z0y3ouj/Trial3b%20-%20Test2.json"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
@@ -149,7 +149,7 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"ShowProfileFromPopover"]) {
         

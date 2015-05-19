@@ -1,4 +1,3 @@
-
 //
 //  MapPopoverTableVC.m
 //  Team Alpha Alumni
@@ -70,7 +69,13 @@
     
     cell.MapPopoverNameLabel.text = individual.name;
     
-    cell.MapPopoverWorkLabel.text = [[individual.position componentsSeparatedByString:@", "] firstObject];
+    NSString *position = [[individual.work firstObject] objectForKey:@"position"];
+    NSString *company = [[individual.work firstObject] objectForKey:@"company"];
+    
+    if ([company isEqualToString:@""])
+        cell.MapPopoverWorkLabel.text = position;
+    else
+        cell.MapPopoverWorkLabel.text = [NSString stringWithFormat:@"%@ at %@", position, company];
     
     return cell;
 }

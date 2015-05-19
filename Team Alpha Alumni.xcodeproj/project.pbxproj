@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2024C8EF1B07C93E00138C3F /* SearchTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024C8EE1B07C93E00138C3F /* SearchTableVC.m */; };
+		2024C8F21B07CA7000138C3F /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024C8F11B07CA7000138C3F /* SearchTableViewCell.m */; };
 		202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBA431AE4587B00913B85 /* ProfileCollectionVC.m */; };
 		202DBA471AE458A100913B85 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBA461AE458A100913B85 /* ProfileCollectionViewCell.m */; };
 		202DDA831AC601F900F4DC5E /* ProfilePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 202DDA7D1AC601F900F4DC5E /* ProfilePlaceholder.png */; };
@@ -46,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2024C8ED1B07C93E00138C3F /* SearchTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableVC.h; sourceTree = "<group>"; };
+		2024C8EE1B07C93E00138C3F /* SearchTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableVC.m; sourceTree = "<group>"; };
+		2024C8F01B07CA7000138C3F /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		2024C8F11B07CA7000138C3F /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		202DBA421AE4587B00913B85 /* ProfileCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionVC.h; sourceTree = "<group>"; };
 		202DBA431AE4587B00913B85 /* ProfileCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionVC.m; sourceTree = "<group>"; };
 		202DBA451AE458A100913B85 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
@@ -215,6 +221,10 @@
 				20ADB5011B0160F70017DF59 /* MapPopoverTableVC.m */,
 				20ADB5031B017EED0017DF59 /* MapPopoverTableViewCell.h */,
 				20ADB5041B017EED0017DF59 /* MapPopoverTableViewCell.m */,
+				2024C8ED1B07C93E00138C3F /* SearchTableVC.h */,
+				2024C8EE1B07C93E00138C3F /* SearchTableVC.m */,
+				2024C8F01B07CA7000138C3F /* SearchTableViewCell.h */,
+				2024C8F11B07CA7000138C3F /* SearchTableViewCell.m */,
 				E03923411AB9DC130086AE15 /* Main.storyboard */,
 				E03923441AB9DC130086AE15 /* Images.xcassets */,
 				E03923461AB9DC130086AE15 /* LaunchScreen.xib */,
@@ -392,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				202DBA471AE458A100913B85 /* ProfileCollectionViewCell.m in Sources */,
+				2024C8EF1B07C93E00138C3F /* SearchTableVC.m in Sources */,
 				2052D4201AC75E3600865076 /* ProfileVC.m in Sources */,
 				2052D41D1AC75E0800865076 /* YearSelectionTableViewCell.m in Sources */,
 				202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */,
@@ -399,6 +410,7 @@
 				E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */,
 				20ADB5051B017EED0017DF59 /* MapPopoverTableViewCell.m in Sources */,
 				20ADB5021B0160F70017DF59 /* MapPopoverTableVC.m in Sources */,
+				2024C8F21B07CA7000138C3F /* SearchTableViewCell.m in Sources */,
 				205B75611B0007FA005A00D7 /* MapViewAnnotation.m in Sources */,
 				E06497691AC0E10D0065BB0A /* Person.m in Sources */,
 				2052D41A1AC75DD700865076 /* YearSelectionTableVC.m in Sources */,

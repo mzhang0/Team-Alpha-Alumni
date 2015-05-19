@@ -11,7 +11,7 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *location;
-@property (strong, nonatomic) NSString *position;
+@property (strong, nonatomic) NSArray *work;
 @property (strong, nonatomic) NSNumber *startYear;
 @property (strong, nonatomic) NSString *role;
 @property (strong, nonatomic) NSString *memory;

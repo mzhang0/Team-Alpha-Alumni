@@ -9,6 +9,7 @@
 #import "YearSelectionTableViewCell.h"
 #import "ProfileCollectionVC.h"
 #import "Person.h"
+#import "SearchTableVC.h"
 #import <RestKit/RestKit.h>
 
 @interface YearSelectionTableVC ()
@@ -40,7 +41,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [personMapping addAttributeMappingsFromDictionary:@{
                                                          @"fullName": @"name",
                                                          @"location": @"location",
-                                                         @"work": @"position",
+                                                         @"work": @"work",
                                                          @"year": @"startYear",
                                                          @"role": @"role",
                                                          @"memory": @"memory",
@@ -51,7 +52,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:personMapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    NSURL *URL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/qvtgyrroizbfzti/Trial3b.json"];
+    NSURL *URL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/92ricd41z0y3ouj/Trial3b%20-%20Test2.json"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
@@ -199,6 +200,11 @@ static NSString * const reuseIdentifier = @"Cell";
         profileCollectionController.selectedYear = year;
         
         [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    }
+    else if([segue.identifier isEqualToString:@"SearchFromYearSelection"]) {
+        
+        SearchTableVC *searchViewController = segue.destinationViewController;
+        searchViewController.people = self.people;
     }
 }
 

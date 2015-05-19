@@ -1,13 +1,13 @@
 //
-//  MapPopoverTableViewCell.m
+//  SearchTableViewCell.m
 //  Team Alpha Alumni
 //
 //  Copyright (c) 2015 Awesome Inc. All rights reserved.
 //
 
-#import "MapPopoverTableViewCell.h"
+#import "SearchTableViewCell.h"
 
-@implementation MapPopoverTableViewCell
+@implementation SearchTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
