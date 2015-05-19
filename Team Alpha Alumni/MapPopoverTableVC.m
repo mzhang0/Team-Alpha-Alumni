@@ -55,17 +55,7 @@
     
     Person *individual = self.residents[indexPath.row];
     
-    // Configure the cell...
-    
-    SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    NSURL *url = [NSURL URLWithString:individual.thumbnail];
-    
-    [manager downloadImageWithURL:url options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {}
-        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-            
-            if (image)
-                cell.MapPopoverThumbnail.image = image;
-        }];
+    [cell.MapPopoverThumbnail sd_setImageWithURL:[NSURL URLWithString:individual.thumbnail] placeholderImage:nil];
     
     cell.MapPopoverNameLabel.text = individual.name;
     

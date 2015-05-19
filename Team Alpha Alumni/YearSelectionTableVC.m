@@ -10,7 +10,6 @@
 #import "ProfileCollectionVC.h"
 #import "Person.h"
 #import "SearchTableVC.h"
-#import <RestKit/RestKit.h>
 
 @interface YearSelectionTableVC ()
 
@@ -26,6 +25,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.yearSelectionTableActivityIndicator startAnimating];
     
     [self loadPeople];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -35,27 +35,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)loadPeople {
     
-    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/plain"];
-    
-    RKObjectMapping* personMapping = [RKObjectMapping mappingForClass:[Person class]];
-    [personMapping addAttributeMappingsFromDictionary:@{
-                                                         @"fullName": @"name",
-                                                         @"location": @"location",
-                                                         @"work": @"work",
-                                                         @"year": @"startYear",
-                                                         @"role": @"role",
-                                                         @"memory": @"memory",
-                                                         @"experience": @"experience",
-                                                         @"thumbnail": @"thumbnail",
-                                                         @"fullRes" : @"photo"
-                                                        }];
-    
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:personMapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    
-    NSURL *URL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/92ricd41z0y3ouj/Trial3b%20-%20Test2.json"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
+    RKObjectRequestOperation *objectRequestOperation = [Person getObjectRequestOperation];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         self.people = mappingResult.array;

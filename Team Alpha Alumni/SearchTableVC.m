@@ -8,7 +8,6 @@
 #import "SearchTableVC.h"
 #import "ProfileVC.h"
 #import "SearchTableViewCell.h"
-#import <RestKit/RestKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface SearchTableVC ()
@@ -53,30 +52,9 @@
 
 - (void)loadPeople {
     
-    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/plain"];
-    
-    RKObjectMapping* personMapping = [RKObjectMapping mappingForClass:[Person class]];
-    [personMapping addAttributeMappingsFromDictionary:@{
-                                                        @"fullName": @"name",
-                                                        @"location": @"location",
-                                                        @"work": @"work",
-                                                        @"year": @"startYear",
-                                                        @"role": @"role",
-                                                        @"memory": @"memory",
-                                                        @"experience": @"experience",
-                                                        @"thumbnail": @"thumbnail",
-                                                        @"fullRes" : @"photo"
-                                                       }];
-    
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:personMapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    
-    NSURL *URL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/92ricd41z0y3ouj/Trial3b%20-%20Test2.json"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
+    RKObjectRequestOperation *objectRequestOperation = [Person getObjectRequestOperation];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
-        //self.people = mappingResult.array;
         self.people = [mappingResult.array sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
         RKLogInfo(@"Loaded people:\n %@", self.people);
         [self initializeSearchController];
@@ -135,31 +113,15 @@
     else
         individual = [self.people objectAtIndex:indexPath.row];
     
-    SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    NSURL *url = [NSURL URLWithString:individual.thumbnail];
-    
-    [manager downloadImageWithURL:url options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {}
-        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-            
-            if (image)
-                cell.ThumbnailView.image = image;
-        }];
+    [cell.ThumbnailView sd_setImageWithURL:[NSURL URLWithString:individual.thumbnail] placeholderImage:nil];
     
     if ([individual.location isEqualToString:@""]) {
         cell.NameLocationLabel.text = individual.name;
         cell.WorkLabel.text = nil;
     }
     else {
-    
         cell.NameLocationLabel.text = [NSString stringWithFormat:@"%@ - %@", individual.name, individual.location];
-        
-        NSString *position = [[individual.work firstObject] objectForKey:@"position"];
-        NSString *company = [[individual.work firstObject] objectForKey:@"company"];
-        
-        if ([company isEqualToString:@""])
-            cell.WorkLabel.text = position;
-        else
-            cell.WorkLabel.text = [NSString stringWithFormat:@"%@ at %@", position, company];
+        cell.WorkLabel.text = individual.getFormattedWorkInformation;
     }
     return cell;
 }
@@ -173,8 +135,6 @@
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    
-    NSLog(@"Update Search Method Called!!!!");
     
     self.searchController.searchBar.barStyle = UIBarStyleBlack;
     
@@ -276,7 +236,6 @@
         
         ProfileVC *profileController = segue.destinationViewController;
         profileController.alumnus = self.selectedPerson;
-        //NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     }
 }
 

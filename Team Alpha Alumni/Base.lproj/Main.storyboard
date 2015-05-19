@@ -180,7 +180,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiu-Xy-0ib">
-                                            <rect key="frame" x="98" y="37" width="51" height="44"/>
+                                            <rect key="frame" x="98" y="37" width="619" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -193,6 +193,7 @@
                                         <constraint firstItem="uiu-Xy-0ib" firstAttribute="leading" secondItem="RZX-04-WRz" secondAttribute="trailing" constant="8" id="Hxw-BQ-nno"/>
                                         <constraint firstItem="BMw-Nr-8om" firstAttribute="top" secondItem="2YY-eA-MS6" secondAttribute="topMargin" id="W4D-uL-lHD"/>
                                         <constraint firstItem="uiu-Xy-0ib" firstAttribute="leading" secondItem="RZX-04-WRz" secondAttribute="trailing" constant="8" id="fLG-JV-wGE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uiu-Xy-0ib" secondAttribute="trailing" constant="10" id="hqa-AM-jqV"/>
                                         <constraint firstItem="uiu-Xy-0ib" firstAttribute="top" secondItem="BMw-Nr-8om" secondAttribute="bottom" constant="3" id="mCE-5x-98b"/>
                                         <constraint firstItem="BMw-Nr-8om" firstAttribute="leading" secondItem="RZX-04-WRz" secondAttribute="trailing" constant="8" id="uVN-6G-KJm"/>
                                         <constraint firstAttribute="centerY" secondItem="RZX-04-WRz" secondAttribute="centerY" id="xLw-0H-kdh"/>

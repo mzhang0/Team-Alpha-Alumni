@@ -9,7 +9,6 @@
 #import "MapViewAnnotation.h"
 #import "MapPopoverTableVC.h"
 #import "ProfileVC.h"
-#import <RestKit/RestKit.h>
 
 @interface MapVC ()
 
@@ -25,27 +24,7 @@
 
 - (void)loadPeople {
     
-    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/plain"];
-    
-    RKObjectMapping* personMapping = [RKObjectMapping mappingForClass:[Person class]];
-    [personMapping addAttributeMappingsFromDictionary:@{
-                                                        @"fullName": @"name",
-                                                        @"location": @"location",
-                                                        @"work": @"work",
-                                                        @"year": @"startYear",
-                                                        @"role": @"role",
-                                                        @"memory": @"memory",
-                                                        @"experience": @"experience",
-                                                        @"thumbnail": @"thumbnail",
-                                                        @"fullRes" : @"photo"
-                                                       }];
-    
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:personMapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    
-    NSURL *URL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/92ricd41z0y3ouj/Trial3b%20-%20Test2.json"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
+    RKObjectRequestOperation *objectRequestOperation = [Person getObjectRequestOperation];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         self.people = mappingResult.array;
@@ -123,13 +102,13 @@
     CGFloat height;
     
     switch (locationAnnotation.peopleLivingHere.count) {
-        case (NSUInteger)1:
+        case 1:
             height = 66;
             break;
-        case (NSUInteger)2:
+        case 2:
             height = 110;
             break;
-        case (NSUInteger)3:
+        case 3:
             height = 154;
             break;
         default:

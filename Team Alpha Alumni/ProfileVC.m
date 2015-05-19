@@ -21,26 +21,9 @@
     
     NSURL *url = [NSURL URLWithString:self.alumnus.photo];
     [self.ProfileImage sd_setImageWithURL:url placeholderImage:nil];
-    
-    NSMutableString *workInformation = [[NSMutableString alloc] init];
 
-    for (NSUInteger i = 0; i < self.alumnus.work.count; i++) {
-        NSDictionary *workEntry = [self.alumnus.work objectAtIndex:i];
-        
-        NSString *position = [workEntry objectForKey:@"position"];
-        NSString *company = [workEntry objectForKey:@"company"];
-        
-        if ([company isEqualToString:@""])
-            [workInformation appendFormat:@"%@", position];
-        else
-            [workInformation appendFormat:@"%@ at %@", position, company];
-        
-        if (i < self.alumnus.work.count - 1)
-            [workInformation appendString:@", "];
-    }
-    
     self.NameLabel.text = self.alumnus.name;
-    self.WorkLabel.text = workInformation;
+    self.WorkLabel.text = self.alumnus.getFormattedWorkInformation;
     self.RoleText.text = self.alumnus.role;
     self.StartingYearText.text = [self.alumnus.startYear stringValue];
     

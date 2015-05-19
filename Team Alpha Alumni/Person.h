@@ -5,7 +5,8 @@
 //  Copyright (c) 2015 Awesome Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 
 @interface Person : NSObject
 
@@ -18,5 +19,9 @@
 @property (strong, nonatomic) NSString *experience;
 @property (strong, nonatomic) NSString *thumbnail;
 @property (strong, nonatomic) NSString *photo;
+
+- (NSString *)getFormattedWorkInformation;
+
++ (RKObjectRequestOperation *)getObjectRequestOperation;
 
 @end

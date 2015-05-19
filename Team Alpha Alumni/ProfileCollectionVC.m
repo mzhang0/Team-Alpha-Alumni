@@ -90,16 +90,14 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     ProfileCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    Person *individual = self.filteredPeople[indexPath.row];
     
-    // Configure the cell
+    Person *individual = self.filteredPeople[indexPath.row];
     
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
     NSURL *url = [NSURL URLWithString:individual.thumbnail];
-    
     [manager downloadImageWithURL:url options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {}
         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        
+            
             if (image)
                 [cell.ThumbnailButton setBackgroundImage:image forState:UIControlStateNormal];
         }];
