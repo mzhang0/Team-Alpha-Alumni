@@ -19,13 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Search";
-    
-    if (!self.people)
+    if (!self.people) {
+        
         [self loadPeople];
-    else
+        [self.SearchTableActivityIndicator startAnimating];
+    }
+    else {
+        
         self.people = [self.people sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
         [self initializeSearchController];
+    }
 }
 
 - (void)initializeSearchController {
@@ -58,6 +61,7 @@
         self.people = [mappingResult.array sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
         RKLogInfo(@"Loaded people:\n %@", self.people);
         [self initializeSearchController];
+        [self.SearchTableActivityIndicator stopAnimating];
         [self.tableView reloadData];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error) {

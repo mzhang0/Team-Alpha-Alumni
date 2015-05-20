@@ -9,6 +9,7 @@
 #import "MapViewAnnotation.h"
 #import "MapPopoverTableVC.h"
 #import "ProfileVC.h"
+#import "SearchTableVC.h"
 
 @interface MapVC ()
 
@@ -136,6 +137,11 @@
         profileViewController.alumnus = self.selectedPerson;
 
         [self.popover dismissPopoverAnimated:NO];
+    }
+    else if ([segue.identifier isEqualToString:@"SearchFromMap"]) {
+        
+        SearchTableVC *searchViewController = segue.destinationViewController;
+        searchViewController.people = self.people;
     }
 }
 

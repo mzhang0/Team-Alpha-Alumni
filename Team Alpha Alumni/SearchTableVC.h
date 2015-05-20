@@ -10,6 +10,8 @@
 
 @interface SearchTableVC : UITableViewController <UISearchBarDelegate, UISearchResultsUpdating>
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *SearchTableActivityIndicator;
+
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSArray *people;
 @property (strong, nonatomic) NSMutableArray *filteredPeople;

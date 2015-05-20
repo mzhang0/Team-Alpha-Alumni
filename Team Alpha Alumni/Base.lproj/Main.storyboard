@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXr-Ch-dcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-721" y="620"/>
+            <point key="canvasLocation" x="-769" y="904"/>
         </scene>
         <!--Home-->
         <scene sceneID="Stf-gc-Sdu">
@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4i0-6M-jge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="1456"/>
+            <point key="canvasLocation" x="111" y="904"/>
         </scene>
         <!--Search-->
         <scene sceneID="osK-PT-zn3">
@@ -155,6 +155,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="mf4-Ch-mXO">
+                            <rect key="frame" x="0.0" y="176" width="768" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SearchCell" id="8fK-a3-b9m" customClass="SearchTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -214,10 +218,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search" id="YRK-CU-VPw"/>
+                    <connections>
+                        <outlet property="SearchTableActivityIndicator" destination="mf4-Ch-mXO" id="OS7-mH-bMP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bao-Qk-J4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2235" y="2474"/>
+            <point key="canvasLocation" x="1951" y="2434"/>
         </scene>
         <!--Team Alpha Map-->
         <scene sceneID="oCc-WW-WEn">
@@ -237,32 +244,21 @@
                                     <outlet property="delegate" destination="hq5-bq-yTN" id="vee-YX-xzf"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ik7-La-43g">
-                                <rect key="frame" x="2000" y="2000" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="LeJ-e2-0F6"/>
-                                    <constraint firstAttribute="width" constant="1" id="b2v-Bx-5ar"/>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="Ik7-La-43g" secondAttribute="bottom" constant="-977" id="0Sx-59-lKh"/>
                             <constraint firstItem="8Zf-QR-vvo" firstAttribute="bottom" secondItem="SHC-yb-dG5" secondAttribute="top" id="MVG-cM-lci"/>
                             <constraint firstItem="8Zf-QR-vvo" firstAttribute="leading" secondItem="efO-sj-Vuw" secondAttribute="leading" id="cwU-rv-Fxw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ik7-La-43g" secondAttribute="trailing" constant="-1249" id="i1o-Su-ezE"/>
                             <constraint firstAttribute="trailing" secondItem="8Zf-QR-vvo" secondAttribute="trailing" id="l7D-Lx-h4q"/>
                             <constraint firstItem="8Zf-QR-vvo" firstAttribute="top" secondItem="efO-sj-Vuw" secondAttribute="top" id="mhh-it-5mP"/>
-                            <constraint firstItem="Ik7-La-43g" firstAttribute="leading" secondItem="efO-sj-Vuw" secondAttribute="leadingMargin" constant="1984" id="nDv-7E-6tw"/>
-                            <constraint firstItem="Ik7-La-43g" firstAttribute="top" secondItem="efO-sj-Vuw" secondAttribute="topMargin" constant="2000" id="qtj-nP-0fZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Team Alpha Map" id="two-Yp-ICc">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="NH6-xA-FYw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="C1w-X9-4h8" kind="push" identifier="SearchFromMap" id="m8e-eu-sef"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -272,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yC-gz-Axt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1443" y="-550"/>
+            <point key="canvasLocation" x="1831" y="-446"/>
         </scene>
         <!--Map Popover TableVC-->
         <scene sceneID="yS5-ko-icg">
@@ -338,7 +334,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRa-iS-7Hk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="-694"/>
+            <point key="canvasLocation" x="1087" y="-852.5"/>
         </scene>
         <!--Starting Year Selection-->
         <scene sceneID="Xa2-Vq-RO4">
@@ -402,7 +398,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hf1-MT-asw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1443" y="620"/>
+            <point key="canvasLocation" x="1291" y="904"/>
         </scene>
         <!--Profile CollectionVC-->
         <scene sceneID="DBW-k1-60l">
@@ -459,12 +455,15 @@
                     <navigationItem key="navigationItem" id="ITl-z1-UDB">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="l5w-id-Dbd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="C1w-X9-4h8" kind="push" identifier="SearchFromProfileSelection" id="6Sx-Dl-YST"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1s-xo-rBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2261" y="620"/>
+            <point key="canvasLocation" x="2521" y="904"/>
         </scene>
         <!--Placeholder's Profile-->
         <scene sceneID="zgH-D1-cW0">
@@ -650,6 +649,9 @@
                     <navigationItem key="navigationItem" title="Placeholder's Profile" id="csl-S5-Fip">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="FH0-pS-YrZ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="C1w-X9-4h8" kind="push" identifier="SearchFromProfileView" id="39I-eg-QIR"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -665,7 +667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4B7-Id-LQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3100" y="620"/>
+            <point key="canvasLocation" x="3680" y="912"/>
         </scene>
     </scenes>
     <resources>
@@ -681,7 +683,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xPZ-Jg-Sf1"/>
+        <segue reference="m8e-eu-sef"/>
         <segue reference="6L1-hq-SoB"/>
     </inferredMetricsTieBreakers>
 </document>
