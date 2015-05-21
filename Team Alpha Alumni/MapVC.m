@@ -21,6 +21,12 @@
     [super viewDidLoad];
     
     [self loadPeople];
+    
+    [MBXMapKit setAccessToken:@"pk.eyJ1IjoibXpoYW5nMCIsImEiOiJIel9aZWZJIn0.lOCIvOv6myHnBwnM-v8paQ"];
+    
+    self.rasterOverlay = [[MBXRasterTileOverlay alloc] initWithMapID:@"mzhang0.d1d979d1"];
+    self.rasterOverlay.delegate = self;
+    [self.MapView addOverlay:self.rasterOverlay];
 }
 
 - (void)loadPeople {
@@ -83,6 +89,16 @@
 }
 
 #pragma mark - Delegate Methods
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    
+    if ([overlay isKindOfClass:[MBXRasterTileOverlay class]]) {
+        
+        MBXRasterTileRenderer *renderer = [[MBXRasterTileRenderer alloc] initWithTileOverlay:overlay];
+        return renderer;
+    }
+    return nil;
+}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     
