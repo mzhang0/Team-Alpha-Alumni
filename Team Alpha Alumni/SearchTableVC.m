@@ -29,6 +29,7 @@
         self.people = [self.people sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
         [self initializeSearchController];
     }
+    
 }
 
 - (void)initializeSearchController {
@@ -37,6 +38,7 @@
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     
+    self.searchController.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     
     self.searchController.searchResultsUpdater = self;
@@ -51,6 +53,8 @@
     self.definesPresentationContext = YES;
     
     [self.searchController.searchBar sizeToFit];
+    
+    self.searchController.active = YES;
 }
 
 - (void)loadPeople {
@@ -130,17 +134,18 @@
     return cell;
 }
 
+#pragma mark - Search delegate methods
+
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
     [self.tableView reloadData];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope{
     [self updateSearchResultsForSearchController:self.searchController];
+    [searchBar becomeFirstResponder];
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    
-    self.searchController.searchBar.barStyle = UIBarStyleBlack;
     
     NSString *searchText = [self.searchController.searchBar text];
     
@@ -152,7 +157,7 @@
     [self.tableView reloadData];
 }
 
-- (void)updateFilteredContent:(NSString *)searchText forScope:(NSString *)scope{
+- (void)updateFilteredContent:(NSString *)searchText forScope:(NSString *)scope {
     
     if (searchText == nil || searchText.length == 0) {
         self.filteredPeople = [self.people mutableCopy];

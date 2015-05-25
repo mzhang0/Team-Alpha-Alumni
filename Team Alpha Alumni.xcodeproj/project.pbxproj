@@ -23,6 +23,8 @@
 		206106FD1AFC2EFC00A767C4 /* ProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106F91AFC2EFC00A767C4 /* ProfileIcon.png */; };
 		206106FE1AFC2EFC00A767C4 /* WorkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 206106FA1AFC2EFC00A767C4 /* WorkIcon.png */; };
 		206B26C01AFD4AFC00EEC3DE /* AwesomeIncLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 206B26BF1AFD4AFC00EEC3DE /* AwesomeIncLogo.png */; };
+		207C88F81B1251840099D3EB /* CompaniesTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 207C88F71B1251840099D3EB /* CompaniesTableVC.m */; };
+		207C88FB1B1251AC0099D3EB /* CompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 207C88FA1B1251AC0099D3EB /* CompanyTableViewCell.m */; };
 		20ADB5021B0160F70017DF59 /* MapPopoverTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ADB5011B0160F70017DF59 /* MapPopoverTableVC.m */; };
 		20ADB5051B017EED0017DF59 /* MapPopoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ADB5041B017EED0017DF59 /* MapPopoverTableViewCell.m */; };
 		20C9D5491AD381BC002F7BA4 /* Exo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20C9D5481AD38169002F7BA4 /* Exo-Black.otf */; };
@@ -74,6 +76,10 @@
 		206106F91AFC2EFC00A767C4 /* ProfileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileIcon.png; sourceTree = "<group>"; };
 		206106FA1AFC2EFC00A767C4 /* WorkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkIcon.png; sourceTree = "<group>"; };
 		206B26BF1AFD4AFC00EEC3DE /* AwesomeIncLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AwesomeIncLogo.png; sourceTree = "<group>"; };
+		207C88F61B1251840099D3EB /* CompaniesTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesTableVC.h; sourceTree = "<group>"; };
+		207C88F71B1251840099D3EB /* CompaniesTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesTableVC.m; sourceTree = "<group>"; };
+		207C88F91B1251AC0099D3EB /* CompanyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyTableViewCell.h; sourceTree = "<group>"; };
+		207C88FA1B1251AC0099D3EB /* CompanyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyTableViewCell.m; sourceTree = "<group>"; };
 		20ADB5001B0160F70017DF59 /* MapPopoverTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPopoverTableVC.h; sourceTree = "<group>"; };
 		20ADB5011B0160F70017DF59 /* MapPopoverTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPopoverTableVC.m; sourceTree = "<group>"; };
 		20ADB5031B017EED0017DF59 /* MapPopoverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPopoverTableViewCell.h; sourceTree = "<group>"; };
@@ -225,6 +231,10 @@
 				2024C8EE1B07C93E00138C3F /* SearchTableVC.m */,
 				2024C8F01B07CA7000138C3F /* SearchTableViewCell.h */,
 				2024C8F11B07CA7000138C3F /* SearchTableViewCell.m */,
+				207C88F61B1251840099D3EB /* CompaniesTableVC.h */,
+				207C88F71B1251840099D3EB /* CompaniesTableVC.m */,
+				207C88F91B1251AC0099D3EB /* CompanyTableViewCell.h */,
+				207C88FA1B1251AC0099D3EB /* CompanyTableViewCell.m */,
 				E03923411AB9DC130086AE15 /* Main.storyboard */,
 				E03923441AB9DC130086AE15 /* Images.xcassets */,
 				E03923461AB9DC130086AE15 /* LaunchScreen.xib */,
@@ -404,6 +414,7 @@
 				202DBA471AE458A100913B85 /* ProfileCollectionViewCell.m in Sources */,
 				2024C8EF1B07C93E00138C3F /* SearchTableVC.m in Sources */,
 				2052D4201AC75E3600865076 /* ProfileVC.m in Sources */,
+				207C88F81B1251840099D3EB /* CompaniesTableVC.m in Sources */,
 				2052D41D1AC75E0800865076 /* YearSelectionTableViewCell.m in Sources */,
 				202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */,
 				E039233D1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld in Sources */,
@@ -417,6 +428,7 @@
 				2059B78A1AFFBFE800CFC3BA /* MapVC.m in Sources */,
 				202DDA881AC608AC00F4DC5E /* HomeVC.m in Sources */,
 				E03923371AB9DC130086AE15 /* main.m in Sources */,
+				207C88FB1B1251AC0099D3EB /* CompanyTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

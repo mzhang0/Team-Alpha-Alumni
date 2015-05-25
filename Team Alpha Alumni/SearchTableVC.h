@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "Person.h"
 
-@interface SearchTableVC : UITableViewController <UISearchBarDelegate, UISearchResultsUpdating>
+@interface SearchTableVC : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating>
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *SearchTableActivityIndicator;
 

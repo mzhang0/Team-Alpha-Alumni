@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZPV-Nt-2WW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZPV-Nt-2WW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -47,6 +47,9 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="140" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Places They Work" backgroundImage="WorkIcon.png"/>
+                                        <connections>
+                                            <segue destination="Uu0-ev-DGt" kind="push" id="Eor-QY-Pb8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -145,6 +148,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4i0-6M-jge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="111" y="904"/>
+        </scene>
+        <!--Companies TableVC-->
+        <scene sceneID="0bN-Ai-IL0">
+            <objects>
+                <tableViewController id="Uu0-ev-DGt" customClass="CompaniesTableVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="310" sectionHeaderHeight="22" sectionFooterHeight="22" id="97a-HB-EbB">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="Ajj-my-3se">
+                            <rect key="frame" x="0.0" y="396" width="768" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompanyCell" id="DLE-AE-rWV" customClass="CompanyTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DLE-AE-rWV" id="hZ4-s2-gsO">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bio-dj-Fui">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerX" secondItem="Bio-dj-Fui" secondAttribute="centerX" id="b2r-TW-JIO"/>
+                                        <constraint firstAttribute="centerY" secondItem="Bio-dj-Fui" secondAttribute="centerY" id="hId-sg-Wo1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="CompanyImageButton" destination="Bio-dj-Fui" id="oGI-gJ-INu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Uu0-ev-DGt" id="Ulx-6H-yvK"/>
+                            <outlet property="delegate" destination="Uu0-ev-DGt" id="wha-XE-USI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="wFS-3T-xxw"/>
+                    <connections>
+                        <outlet property="CompaniesTableViewActivityIndicator" destination="Ajj-my-3se" id="uTS-f0-HzR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlb-nf-HDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-515" y="2434"/>
         </scene>
         <!--Search-->
         <scene sceneID="osK-PT-zn3">
@@ -683,7 +736,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="m8e-eu-sef"/>
+        <segue reference="xPZ-Jg-Sf1"/>
         <segue reference="6L1-hq-SoB"/>
     </inferredMetricsTieBreakers>
 </document>
