@@ -149,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="111" y="904"/>
         </scene>
-        <!--Companies TableVC-->
+        <!--Company Selection-->
         <scene sceneID="0bN-Ai-IL0">
             <objects>
                 <tableViewController id="Uu0-ev-DGt" customClass="CompaniesTableVC" sceneMemberID="viewController">
@@ -173,6 +173,9 @@
                                             <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <segue destination="CSt-oG-xVo" kind="push" identifier="ShowEmployees" id="pfc-8M-ESJ"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -190,7 +193,7 @@
                             <outlet property="delegate" destination="Uu0-ev-DGt" id="wha-XE-USI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wFS-3T-xxw"/>
+                    <navigationItem key="navigationItem" title="Company Selection" id="wFS-3T-xxw"/>
                     <connections>
                         <outlet property="CompaniesTableViewActivityIndicator" destination="Ajj-my-3se" id="uTS-f0-HzR"/>
                     </connections>
@@ -198,6 +201,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlb-nf-HDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-515" y="2434"/>
+        </scene>
+        <!--Employee TableVC-->
+        <scene sceneID="RVa-Uo-v9p">
+            <objects>
+                <tableViewController id="CSt-oG-xVo" customClass="EmployeeTableVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="GbH-V5-zz5">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EmployeeCell" id="FKY-TO-d7C" customClass="SearchTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FKY-TO-d7C" id="4mi-0X-uCk">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6u-tO-ieX">
+                                            <rect key="frame" x="98" y="8" width="51" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="jGJ-ci-mY1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Tw-HN-F6q">
+                                            <rect key="frame" x="8" y="4" width="82" height="82"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="82" id="4zd-qj-iq5"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="82" id="98y-hh-vOo"/>
+                                                <constraint firstAttribute="width" constant="82" id="F6s-PQ-t7N"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="82" id="e2b-u8-RFc"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNo-Ch-191">
+                                            <rect key="frame" x="98" y="37" width="619" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lNo-Ch-191" firstAttribute="leading" secondItem="2Tw-HN-F6q" secondAttribute="trailing" constant="8" id="8hP-bm-eiu"/>
+                                        <constraint firstItem="lNo-Ch-191" firstAttribute="leading" secondItem="2Tw-HN-F6q" secondAttribute="trailing" constant="8" id="9J0-CL-PUo"/>
+                                        <constraint firstItem="Y6u-tO-ieX" firstAttribute="top" secondItem="4mi-0X-uCk" secondAttribute="topMargin" id="ApM-Ox-87z"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="lNo-Ch-191" secondAttribute="trailing" constant="10" id="Pqm-Bf-Bfe"/>
+                                        <constraint firstItem="Y6u-tO-ieX" firstAttribute="leading" secondItem="2Tw-HN-F6q" secondAttribute="trailing" constant="8" id="aKk-9N-fGR"/>
+                                        <constraint firstAttribute="centerY" secondItem="2Tw-HN-F6q" secondAttribute="centerY" id="do2-ck-tRb"/>
+                                        <constraint firstItem="2Tw-HN-F6q" firstAttribute="leading" secondItem="4mi-0X-uCk" secondAttribute="leadingMargin" id="esk-2e-KXT"/>
+                                        <constraint firstItem="Y6u-tO-ieX" firstAttribute="leading" secondItem="2Tw-HN-F6q" secondAttribute="trailing" constant="8" id="lpe-WS-bGp"/>
+                                        <constraint firstItem="Y6u-tO-ieX" firstAttribute="top" secondItem="4mi-0X-uCk" secondAttribute="topMargin" id="oL3-lL-Urz"/>
+                                        <constraint firstItem="lNo-Ch-191" firstAttribute="top" secondItem="Y6u-tO-ieX" secondAttribute="bottom" constant="3" id="y5K-c6-MRp"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="NameLocationLabel" destination="Y6u-tO-ieX" id="hN3-Zc-Fn5"/>
+                                    <outlet property="ThumbnailView" destination="2Tw-HN-F6q" id="zlp-uS-4QR"/>
+                                    <outlet property="WorkLabel" destination="lNo-Ch-191" id="kXx-hc-Hws"/>
+                                    <segue destination="edM-nB-LBP" kind="push" identifier="ShowProfileFromEmployees" id="FMa-3A-UsW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CSt-oG-xVo" id="xaJ-S6-nlP"/>
+                            <outlet property="delegate" destination="CSt-oG-xVo" id="1zB-2y-LA9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0h8-la-ajv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vw9-db-oAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356" y="2433"/>
         </scene>
         <!--Search-->
         <scene sceneID="osK-PT-zn3">
@@ -737,6 +810,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="xPZ-Jg-Sf1"/>
-        <segue reference="6L1-hq-SoB"/>
+        <segue reference="FMa-3A-UsW"/>
     </inferredMetricsTieBreakers>
 </document>

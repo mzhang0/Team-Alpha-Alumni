@@ -28,6 +28,7 @@
 		20ADB5021B0160F70017DF59 /* MapPopoverTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ADB5011B0160F70017DF59 /* MapPopoverTableVC.m */; };
 		20ADB5051B017EED0017DF59 /* MapPopoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ADB5041B017EED0017DF59 /* MapPopoverTableViewCell.m */; };
 		20C9D5491AD381BC002F7BA4 /* Exo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20C9D5481AD38169002F7BA4 /* Exo-Black.otf */; };
+		20FBF8C11B13AC92002BCB3F /* EmployeeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBF8C01B13AC92002BCB3F /* EmployeeTableVC.m */; };
 		664630F2F2F93CC4AF8B1F7F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3467F5EF2BC5F3B55A281AB /* libPods.a */; };
 		E03923371AB9DC130086AE15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E03923361AB9DC130086AE15 /* main.m */; };
 		E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E03923391AB9DC130086AE15 /* AppDelegate.m */; };
@@ -85,6 +86,8 @@
 		20ADB5031B017EED0017DF59 /* MapPopoverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPopoverTableViewCell.h; sourceTree = "<group>"; };
 		20ADB5041B017EED0017DF59 /* MapPopoverTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPopoverTableViewCell.m; sourceTree = "<group>"; };
 		20C9D5481AD38169002F7BA4 /* Exo-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Black.otf"; sourceTree = "<group>"; };
+		20FBF8BF1B13AC92002BCB3F /* EmployeeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableVC.h; sourceTree = "<group>"; };
+		20FBF8C01B13AC92002BCB3F /* EmployeeTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableVC.m; sourceTree = "<group>"; };
 		595F55CDDA5760EFEA9B96A1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6C1D259D6126A656F6BD0F02 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D3467F5EF2BC5F3B55A281AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +238,8 @@
 				207C88F71B1251840099D3EB /* CompaniesTableVC.m */,
 				207C88F91B1251AC0099D3EB /* CompanyTableViewCell.h */,
 				207C88FA1B1251AC0099D3EB /* CompanyTableViewCell.m */,
+				20FBF8BF1B13AC92002BCB3F /* EmployeeTableVC.h */,
+				20FBF8C01B13AC92002BCB3F /* EmployeeTableVC.m */,
 				E03923411AB9DC130086AE15 /* Main.storyboard */,
 				E03923441AB9DC130086AE15 /* Images.xcassets */,
 				E03923461AB9DC130086AE15 /* LaunchScreen.xib */,
@@ -419,6 +424,7 @@
 				202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */,
 				E039233D1AB9DC130086AE15 /* Team_Alpha_Alumni.xcdatamodeld in Sources */,
 				E039233A1AB9DC130086AE15 /* AppDelegate.m in Sources */,
+				20FBF8C11B13AC92002BCB3F /* EmployeeTableVC.m in Sources */,
 				20ADB5051B017EED0017DF59 /* MapPopoverTableViewCell.m in Sources */,
 				20ADB5021B0160F70017DF59 /* MapPopoverTableVC.m in Sources */,
 				2024C8F21B07CA7000138C3F /* SearchTableViewCell.m in Sources */,
