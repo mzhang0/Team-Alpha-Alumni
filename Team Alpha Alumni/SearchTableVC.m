@@ -29,7 +29,6 @@
         self.people = [self.people sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
         [self initializeSearchController];
     }
-    
 }
 
 - (void)initializeSearchController {

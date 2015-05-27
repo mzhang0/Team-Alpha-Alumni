@@ -2,7 +2,6 @@
 //  Team_Alpha_AlumniTests.m
 //  Team Alpha AlumniTests
 //
-//  Created by Johnny Bravo on 3/18/15.
 //  Copyright (c) 2015 Awesome Inc. All rights reserved.
 //
 

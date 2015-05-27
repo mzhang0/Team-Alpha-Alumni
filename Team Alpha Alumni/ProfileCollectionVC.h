@@ -12,4 +12,6 @@
 @property (strong, nonatomic) NSArray *filteredPeople;
 @property (strong, nonatomic) NSNumber *selectedYear;
 
+- (IBAction)SelectedSearchButton:(id)sender;
+
 @end

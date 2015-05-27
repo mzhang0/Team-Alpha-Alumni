@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSString *companyName;
 
+- (IBAction)SelectedSearchButton:(id)sender;
+
 @end

@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) NSArray *companies;
 
+- (IBAction)SelectedSearchButton:(id)sender;
+
 @end

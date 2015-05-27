@@ -113,4 +113,9 @@
     }
 }
 
+- (IBAction)SelectedSearchButton:(id)sender {
+    
+    [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"] animated:YES];
+}
+
 @end

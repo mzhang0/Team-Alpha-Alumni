@@ -19,4 +19,6 @@
 @property (strong, nonatomic) UIPopoverController *popover;
 @property (nonatomic) MBXRasterTileOverlay *rasterOverlay;
 
+- (IBAction)SelectedSearchButton:(id)sender;
+
 @end

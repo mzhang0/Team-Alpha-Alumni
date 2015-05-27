@@ -9,6 +9,7 @@
 #import "CompanyTableViewCell.h"
 #import "Person.h"
 #import "EmployeeTableVC.h"
+#import "SearchTableVC.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CompaniesTableVC ()
@@ -134,6 +135,13 @@
                     
                     [employeeViewController.employees addObject:individual];
     }
+}
+
+- (IBAction)SelectedSearchButton:(id)sender {
+    
+    SearchTableVC *searchController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+    searchController.people = self.people;
+    [self.navigationController pushViewController:searchController animated:YES];
 }
 
 @end

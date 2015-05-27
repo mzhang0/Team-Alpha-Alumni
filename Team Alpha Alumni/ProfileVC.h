@@ -28,4 +28,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *ExperienceText;
 
+- (IBAction)SelectedSearchButton:(id)sender;
+
 @end
