@@ -9,7 +9,6 @@
 
 @interface MapPopoverTableViewCell : UITableViewCell
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *MapPopoverThumbnail;
 
 @property (weak, nonatomic) IBOutlet UILabel *MapPopoverNameLabel;
