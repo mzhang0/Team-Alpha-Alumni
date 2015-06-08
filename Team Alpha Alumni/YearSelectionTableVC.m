@@ -10,6 +10,7 @@
 #import "ProfileCollectionVC.h"
 #import "Person.h"
 #import "SearchTableVC.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface YearSelectionTableVC ()
 
@@ -115,6 +116,10 @@ static NSString * const reuseIdentifier = @"Cell";
         NSString *newTitle = [NSString stringWithFormat:@"%@ Team Alpha Members", year];
         [cell.YearSelectionButton setTitle:newTitle forState:UIControlStateNormal];
     }
+    cell.YearSelectionButton.layer.cornerRadius = 10;
+    cell.YearSelectionButton.layer.borderWidth = 3;
+    cell.YearSelectionButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    
     return cell;
 }
 

@@ -492,9 +492,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYK-lq-aGb">
-                                            <rect key="frame" x="205" y="29" width="359" height="42"/>
+                                            <rect key="frame" x="115" y="16" width="538" height="67"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="42" id="IPW-hx-O8S"/>
+                                                <constraint firstAttribute="height" constant="67" id="Cbb-1t-buu"/>
+                                                <constraint firstAttribute="width" constant="538" id="h0x-mu-sTO"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <state key="normal" title="2000 Team Alpha Members">
@@ -506,8 +507,8 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="JYK-lq-aGb" secondAttribute="centerY" id="1By-On-Ei7"/>
-                                        <constraint firstAttribute="centerX" secondItem="JYK-lq-aGb" secondAttribute="centerX" id="yQN-ht-Aky"/>
+                                        <constraint firstAttribute="centerY" secondItem="JYK-lq-aGb" secondAttribute="centerY" id="8Rt-g0-oRB"/>
+                                        <constraint firstAttribute="centerX" secondItem="JYK-lq-aGb" secondAttribute="centerX" id="FUK-Ly-IuB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
