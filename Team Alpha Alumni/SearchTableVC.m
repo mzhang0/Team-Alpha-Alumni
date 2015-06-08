@@ -244,6 +244,7 @@
         
         ProfileVC *profileController = segue.destinationViewController;
         profileController.alumnus = self.selectedPerson;
+        profileController.isSearchResultProfile = YES;
     }
 }
 

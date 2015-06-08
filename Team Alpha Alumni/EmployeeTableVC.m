@@ -46,10 +46,16 @@
     return self.employees.count;
 }
 
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell setBackgroundColor:[UIColor clearColor]];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EmployeeCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    UIView *colorView = [[UIView alloc] init];
+    colorView.backgroundColor = [UIColor colorWithRed:118/255.0f green:118/255.0f blue:118/255.0f alpha:1.0f];
+    cell.selectedBackgroundView =  colorView;
     
     Person *individual = [self.employees objectAtIndex:indexPath.row];
     

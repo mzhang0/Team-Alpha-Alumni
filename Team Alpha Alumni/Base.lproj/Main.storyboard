@@ -216,21 +216,13 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="172" sectionHeaderHeight="22" sectionFooterHeight="22" id="GbH-V5-zz5">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EmployeeCell" rowHeight="172" id="FKY-TO-d7C" customClass="SearchTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FKY-TO-d7C" id="4mi-0X-uCk">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6u-tO-ieX">
-                                            <rect key="frame" x="166" y="11" width="58" height="26"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="26" id="FJV-PY-MOl"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Tw-HN-F6q">
                                             <rect key="frame" x="8" y="11" width="150" height="150"/>
                                             <constraints>
@@ -241,6 +233,16 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNo-Ch-191">
                                             <rect key="frame" x="166" y="45" width="561" height="116"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6u-tO-ieX">
+                                            <rect key="frame" x="166" y="11" width="58" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="FJV-PY-MOl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -254,7 +256,7 @@
                                         <constraint firstItem="lNo-Ch-191" firstAttribute="trailing" secondItem="4mi-0X-uCk" secondAttribute="trailingMargin" id="x3z-i4-Xhi"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="NameLocationLabel" destination="Y6u-tO-ieX" id="hN3-Zc-Fn5"/>
                                     <outlet property="ThumbnailView" destination="2Tw-HN-F6q" id="zlp-uS-4QR"/>
@@ -796,6 +798,7 @@
                         <outlet property="NameLabel" destination="9Vs-aV-khw" id="n9c-IB-QNR"/>
                         <outlet property="ProfileImage" destination="pQs-eB-wLF" id="dT7-Og-xei"/>
                         <outlet property="RoleText" destination="wEI-ij-7XN" id="FMu-49-C4N"/>
+                        <outlet property="SearchButton" destination="FH0-pS-YrZ" id="jc4-bQ-jsP"/>
                         <outlet property="StartingYearText" destination="xCB-uw-3f8" id="TRt-pD-w5v"/>
                         <outlet property="WorkLabel" destination="3uQ-pv-tT8" id="0kK-jN-RVM"/>
                     </connections>

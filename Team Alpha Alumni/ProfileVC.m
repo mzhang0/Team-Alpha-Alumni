@@ -6,6 +6,7 @@
 //
 
 #import "ProfileVC.h"
+#import "SearchTableVC.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ProfileVC ()
@@ -21,7 +22,12 @@
     
     NSURL *url = [NSURL URLWithString:self.alumnus.photo];
     [self.ProfileImage sd_setImageWithURL:url placeholderImage:nil];
-
+    
+    if (self.isSearchResultProfile) {
+        self.SearchButton.enabled = NO;
+        self.SearchButton.tintColor = [UIColor colorWithRed:103/255.0f green:103/255.0f blue:103/255.0f alpha:1.0f];
+    }
+    
     self.NameLabel.text = self.alumnus.name;
     self.WorkLabel.text = self.alumnus.getFormattedWorkInformation;
     self.RoleText.text = self.alumnus.role;

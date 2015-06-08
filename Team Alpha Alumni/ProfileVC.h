@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) Person *alumnus;
 
+@property BOOL isSearchResultProfile;
+
 @property (weak, nonatomic) IBOutlet UILabel *NameLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *ProfileImage;
@@ -27,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *FavoriteMemoryText;
 
 @property (weak, nonatomic) IBOutlet UITextView *ExperienceText;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *SearchButton;
 
 - (IBAction)SelectedSearchButton:(id)sender;
 
