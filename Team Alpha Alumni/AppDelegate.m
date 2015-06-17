@@ -32,6 +32,11 @@
     
     NSString *backgroundTime = [self.dateFormat stringFromDate:[NSDate date]];
     [[NSUserDefaults standardUserDefaults]setValue:backgroundTime forKey:@"backgroundTime"];
+    
+    UIView *backgroundView = [[UIView alloc] initWithFrame:self.window.bounds];
+    backgroundView.backgroundColor = [UIColor colorWithRed:38/255.0f green:38/255.0f blue:38/255.0f alpha:1.0f];
+    backgroundView.tag = 110;
+    [UIApplication.sharedApplication.keyWindow.subviews.lastObject addSubview:backgroundView];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -41,10 +46,14 @@
     
     NSString *foregroundTime = [self.dateFormat stringFromDate:[NSDate date]];
     NSString *backgroundTime = [[NSUserDefaults standardUserDefaults]valueForKey:@"backgroundTime"];
-    
+
     if ([self calculateTimeInBackground:backgroundTime foregroundTime:foregroundTime] > 21600) {
         UIStoryboard *storyboard = self.window.rootViewController.storyboard;
         self.window.rootViewController = [storyboard instantiateInitialViewController];
+    }
+    else {
+        UIView *backgroundView = (UIView *)[UIApplication.sharedApplication.keyWindow.subviews.lastObject viewWithTag:110];   // search by the same tag value
+        [backgroundView removeFromSuperview];
     }
 }
 
