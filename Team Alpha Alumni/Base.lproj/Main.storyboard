@@ -796,7 +796,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ExperienceLabel" destination="SkA-O3-gz6" id="Wpb-T4-nko"/>
                         <outlet property="ExperienceText" destination="DJF-RK-J8J" id="ec4-E7-aM3"/>
+                        <outlet property="FavoriteMemoryLabel" destination="nTy-5l-qwL" id="Lyx-ln-hkA"/>
                         <outlet property="FavoriteMemoryText" destination="mHe-gh-TXX" id="cVb-mn-dcu"/>
                         <outlet property="LocationText" destination="cHi-IV-4fo" id="Vza-Pl-9fV"/>
                         <outlet property="NameLabel" destination="9Vs-aV-khw" id="n9c-IB-QNR"/>

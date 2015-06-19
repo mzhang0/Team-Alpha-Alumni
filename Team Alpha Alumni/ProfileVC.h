@@ -30,6 +30,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *ExperienceText;
 
+@property (weak, nonatomic) IBOutlet UILabel *FavoriteMemoryLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *ExperienceLabel;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *SearchButton;
 
 - (IBAction)SelectedSearchButton:(id)sender;

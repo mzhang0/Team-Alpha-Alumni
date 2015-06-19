@@ -135,6 +135,10 @@
 
 #pragma mark - Search delegate methods
 
+- (void)didPresentSearchController:(UISearchController *)searchController {
+    [searchController.searchBar becomeFirstResponder];
+}
+
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
     [self.tableView reloadData];
 }
