@@ -126,14 +126,26 @@
         EmployeeTableVC *employeeViewController = segue.destinationViewController;
         employeeViewController.companyName = selectedCompany;
         employeeViewController.employees = [[NSMutableArray alloc] init];
-
-        for (Person *individual in self.people)
+        
+        for (Person *individual in self.people) {
             
-            for (NSDictionary *workInformation in individual.work)
+            BOOL done = NO;
+            NSInteger i = 0;
+            NSArray *workInformation = individual.work;
+            
+            while (!done && i < workInformation.count) {
                 
-                if (![[workInformation objectForKey:@"position"] isEqualToString:@"Student"] && [[workInformation objectForKey:@"company"] isEqualToString:selectedCompany])
+                if (![[workInformation[i] objectForKey:@"position"] isEqualToString:@"Student"] && [[workInformation[i] objectForKey:@"company"] isEqualToString:selectedCompany]) {
                     
                     [employeeViewController.employees addObject:individual];
+                    done = YES;
+                }
+                
+                i++;
+            }
+        }
+        
+        employeeViewController.people = self.people;
     }
 }
 

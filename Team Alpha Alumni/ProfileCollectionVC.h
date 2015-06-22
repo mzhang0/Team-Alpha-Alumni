@@ -10,6 +10,7 @@
 @interface ProfileCollectionVC : UICollectionViewController
 
 @property (strong, nonatomic) NSArray *filteredPeople;
+@property (weak, nonatomic) NSArray *people;
 @property (strong, nonatomic) NSNumber *selectedYear;
 
 - (IBAction)SelectedSearchButton:(id)sender;

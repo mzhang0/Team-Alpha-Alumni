@@ -154,16 +154,13 @@
 
         [self.popover dismissPopoverAnimated:NO];
     }
-    else if ([segue.identifier isEqualToString:@"SearchFromMap"]) {
-        
-        SearchTableVC *searchViewController = segue.destinationViewController;
-        searchViewController.people = self.people;
-    }
 }
 
 - (IBAction)SelectedSearchButton:(id)sender {
     
-    [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"] animated:YES];
+    SearchTableVC *searchController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+    searchController.people = self.people;
+    [self.navigationController pushViewController:searchController animated:YES];
 }
 
 @end

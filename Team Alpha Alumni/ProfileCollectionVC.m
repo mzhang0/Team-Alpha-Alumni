@@ -9,6 +9,7 @@
 #import "ProfileCollectionViewCell.h"
 #import "Person.h"
 #import "ProfileVC.h"
+#import "SearchTableVC.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ProfileCollectionVC ()
@@ -72,6 +73,7 @@ static NSString * const reuseIdentifier = @"Cell";
         
         ProfileVC *profileController = segue.destinationViewController;
         profileController.alumnus = self.filteredPeople[indexPath.row];
+        profileController.people = self.people;
     }
 }
 
@@ -140,7 +142,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (IBAction)SelectedSearchButton:(id)sender {
     
-    [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"] animated:YES];
+    SearchTableVC *searchController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+    searchController.people = self.people;
+    [self.navigationController pushViewController:searchController animated:YES];
 }
 
 @end

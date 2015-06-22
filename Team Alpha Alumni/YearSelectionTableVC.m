@@ -148,8 +148,9 @@ static NSString * const reuseIdentifier = @"Cell";
         }
         
         profileCollectionController.selectedYear = year;
+        profileCollectionController.people = self.people;
         
-        [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+        //[self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     }
 }
 

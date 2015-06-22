@@ -11,6 +11,8 @@
 
 @property (nonatomic, strong) NSMutableArray *employees;
 
+@property (nonatomic, weak) NSArray *people;
+
 @property (nonatomic, strong) NSString *companyName;
 
 - (IBAction)SelectedSearchButton:(id)sender;

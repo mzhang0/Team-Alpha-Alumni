@@ -162,62 +162,63 @@
 
 - (void)updateFilteredContent:(NSString *)searchText forScope:(NSString *)scope {
     
-    if (searchText == nil || searchText.length == 0) {
+    if (searchText == nil || searchText.length == 0)
         self.filteredPeople = [self.people mutableCopy];
-        return;
-    }
+    else {
     
-    [self.filteredPeople removeAllObjects];
-    
-    for (Person *individual in self.people) {
-        if ([scope isEqualToString:@"Name"]) {
-            NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
-            NSRange range = NSMakeRange(0, individual.name.length);
-            NSRange foundRange = [individual.name rangeOfString:searchText options:searchOptions range:range];
-            if (foundRange.length > 0)
-                [self.filteredPeople addObject:individual];
-        }
-        else if ([scope isEqualToString:@"Location"]) {
-            NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
-            NSRange range = NSMakeRange(0, individual.location.length);
-            NSRange foundRange = [individual.location rangeOfString:searchText options:searchOptions range:range];
-            if (foundRange.length > 0)
-                [self.filteredPeople addObject:individual];
-        }
-        else if ([scope isEqualToString:@"Position"]) {
-            BOOL matched = NO;
-            NSUInteger i = 0;
-            
-            while (!matched && i < individual.work.count) {
-                NSString *position = [[individual.work objectAtIndex:i] objectForKey:@"position"];
-                
+        [self.filteredPeople removeAllObjects];
+
+        for (Person *individual in self.people) {
+            if ([scope isEqualToString:@"Name"]) {
                 NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
-                NSRange range = NSMakeRange(0, position.length);
-                NSRange foundRange = [position rangeOfString:searchText options:searchOptions range:range];
-                
-                if (foundRange.length > 0) {
+                NSRange range = NSMakeRange(0, individual.name.length);
+                NSRange foundRange = [individual.name rangeOfString:searchText options:searchOptions range:range];
+                if (foundRange.length > 0)
                     [self.filteredPeople addObject:individual];
-                    matched = YES;
-                }
-                i++;
             }
-        }
-        else {
-            BOOL matched = NO;
-            NSUInteger i = 0;
-            
-            while (!matched && i < individual.work.count) {
-                NSString *company = [[individual.work objectAtIndex:i] objectForKey:@"company"];
-                
+            else if ([scope isEqualToString:@"Location"]) {
                 NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
-                NSRange range = NSMakeRange(0, company.length);
-                NSRange foundRange = [company rangeOfString:searchText options:searchOptions range:range];
-                
-                if (foundRange.length > 0) {
+                NSRange range = NSMakeRange(0, individual.location.length);
+                NSRange foundRange = [individual.location rangeOfString:searchText options:searchOptions range:range];
+                if (foundRange.length > 0)
                     [self.filteredPeople addObject:individual];
-                    matched = YES;
+            }
+            else if ([scope isEqualToString:@"Position"]) {
+                BOOL matched = NO;
+                NSUInteger i = 0;
+                
+                while (!matched && i < individual.work.count) {
+                    NSString *position = [[individual.work objectAtIndex:i] objectForKey:@"position"];
+                    
+                    NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
+                    NSRange range = NSMakeRange(0, position.length);
+                    NSRange foundRange = [position rangeOfString:searchText options:searchOptions range:range];
+                    
+                    if (foundRange.length > 0) {
+                        [self.filteredPeople addObject:individual];
+                        matched = YES;
+                    }
+                    i++;
                 }
-                i++;
+            }
+            else {
+                BOOL matched = NO;
+                NSUInteger i = 0;
+                
+                while (!matched && i < individual.work.count) {
+                    NSString *company = [[individual.work objectAtIndex:i] objectForKey:@"company"];
+                    
+                    NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
+                    NSRange range = NSMakeRange(0, company.length);
+                    NSRange foundRange = [company rangeOfString:searchText options:searchOptions range:range];
+                    
+                    if (foundRange.length > 0) {
+                        [self.filteredPeople addObject:individual];
+                        matched = YES;
+                    }
+                    
+                    i++;
+                }
             }
         }
     }

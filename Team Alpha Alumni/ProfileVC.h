@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) Person *alumnus;
 
+@property (weak, nonatomic) NSArray *people;
+
 @property BOOL isSearchResultProfile;
 
 @property (weak, nonatomic) IBOutlet UILabel *NameLabel;
