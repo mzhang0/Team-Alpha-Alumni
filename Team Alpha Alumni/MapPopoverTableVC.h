@@ -6,11 +6,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MapVC.h"
+#import "Person.h"
+
+@protocol SelectedPersonProtocol <NSObject>
+
+- (void)setSelectedPerson:(Person *)person;
+
+@end
 
 @interface MapPopoverTableVC : UITableViewController
 
+@property (nonatomic) id delegate;
 @property (strong, nonatomic) NSArray *residents;
-@property (strong, nonatomic) MapVC *mapViewController;
 
 @end

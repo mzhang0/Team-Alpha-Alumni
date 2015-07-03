@@ -643,13 +643,6 @@
                                     <constraint firstItem="PAT-dL-sbo" firstAttribute="leading" secondItem="6A2-rv-WzE" secondAttribute="leading" id="a6d-mk-Esu"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ProfilePlaceholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="pQs-eB-wLF">
-                                <rect key="frame" x="49" y="133" width="250" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="GZ7-N6-eGz"/>
-                                    <constraint firstAttribute="width" constant="250" id="Irs-YG-hDb"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uQ-pv-tT8">
                                 <rect key="frame" x="16" y="391" width="333" height="168"/>
                                 <constraints>
@@ -680,7 +673,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Location:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-R4-8FQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-R4-8FQ">
                                 <rect key="frame" x="373" y="133" width="352" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Om9-cZ-epP"/>
@@ -750,6 +743,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pQs-eB-wLF">
+                                <rect key="frame" x="49" y="133" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="GZ7-N6-eGz"/>
+                                    <constraint firstAttribute="width" constant="250" id="Irs-YG-hDb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.11" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -818,7 +818,6 @@
         <image name="AwesomeIncLogo.png" width="1499" height="290"/>
         <image name="MapIcon.png" width="500" height="500"/>
         <image name="ProfileIcon.png" width="500" height="500"/>
-        <image name="ProfilePlaceholder.png" width="250" height="250"/>
         <image name="WorkIcon.png" width="500" height="500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

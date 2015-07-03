@@ -7,7 +7,6 @@
 
 #import "MapVC.h"
 #import "MapViewAnnotation.h"
-#import "MapPopoverTableVC.h"
 #import "ProfileVC.h"
 #import "SearchTableVC.h"
 
@@ -114,7 +113,7 @@
     
     MapViewAnnotation *locationAnnotation = view.annotation;
     
-    MapPopoverTableVC *mapPopoverTableController = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowPopover"];
+    self.popover = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowPopover"];
     
     CGFloat height;
     
@@ -132,28 +131,27 @@
             height = 211;
     }
     
-    mapPopoverTableController.preferredContentSize = CGSizeMake(500, height);
-    self.popover = [[UIPopoverController alloc] initWithContentViewController:mapPopoverTableController];
+    self.popover.preferredContentSize = CGSizeMake(500, height);
+
+    self.popover.residents = locationAnnotation.peopleLivingHere;
     self.popover.delegate = self;
     
-    mapPopoverTableController.residents = locationAnnotation.peopleLivingHere;
-    mapPopoverTableController.mapViewController = self;
+    self.popover.modalPresentationStyle = UIModalPresentationPopover;
+    [self presentViewController:self.popover animated:YES completion:nil];
     
-    [self.popover presentPopoverFromRect:view.frame inView:view.superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    UIPopoverPresentationController *popoverController = [self.popover popoverPresentationController];
+    popoverController.sourceView = view.superview;
+    popoverController.sourceRect = view.frame;
 }
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)setSelectedPerson:(Person *)selectedPerson {
     
-    if ([segue.identifier isEqualToString:@"ShowProfileFromPopover"]) {
-        
-        ProfileVC *profileViewController = segue.destinationViewController;
-        profileViewController.alumnus = self.selectedPerson;
-
-        [self.popover dismissPopoverAnimated:NO];
-    }
+    ProfileVC *profileController = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileView"];
+    profileController.alumnus = selectedPerson;
+    [self.popover dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController pushViewController:profileController animated:YES];
 }
 
 - (IBAction)SelectedSearchButton:(id)sender {
@@ -162,5 +160,12 @@
     searchController.people = self.people;
     [self.navigationController pushViewController:searchController animated:YES];
 }
+
+/*
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ 
+ }
+ */
 
 @end

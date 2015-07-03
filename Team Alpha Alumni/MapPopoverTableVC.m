@@ -7,7 +7,6 @@
 
 #import "MapPopoverTableVC.h"
 #import "MapPopoverTableViewCell.h"
-#import "Person.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MapPopoverTableVC ()
@@ -72,8 +71,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    self.mapViewController.selectedPerson = self.residents[indexPath.row];
-    [self.mapViewController performSegueWithIdentifier:@"ShowProfileFromPopover" sender:self];
+    [self.delegate setSelectedPerson:self.residents[indexPath.row]];
 }
 
 /*
@@ -110,14 +108,12 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
 */
-
 @end
