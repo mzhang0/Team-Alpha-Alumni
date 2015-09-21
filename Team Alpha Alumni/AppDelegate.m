@@ -27,10 +27,34 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    [self dateFormatter];
+    
+    NSString *backgroundTime = [self.dateFormat stringFromDate:[NSDate date]];
+    [[NSUserDefaults standardUserDefaults]setValue:backgroundTime forKey:@"backgroundTime"];
+    
+    UIView *backgroundView = [[UIView alloc] initWithFrame:self.window.bounds];
+    backgroundView.backgroundColor = [UIColor colorWithRed:38/255.0f green:38/255.0f blue:38/255.0f alpha:1.0f];
+    backgroundView.tag = 110;
+    [UIApplication.sharedApplication.keyWindow.subviews.lastObject addSubview:backgroundView];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    [self dateFormatter];
+    
+    NSString *foregroundTime = [self.dateFormat stringFromDate:[NSDate date]];
+    NSString *backgroundTime = [[NSUserDefaults standardUserDefaults]valueForKey:@"backgroundTime"];
+
+    if ([self calculateTimeInBackground:backgroundTime foregroundTime:foregroundTime] > 21600) {
+        UIStoryboard *storyboard = self.window.rootViewController.storyboard;
+        self.window.rootViewController = [storyboard instantiateInitialViewController];
+    }
+    else {
+        UIView *backgroundView = (UIView *)[UIApplication.sharedApplication.keyWindow.subviews.lastObject viewWithTag:110];   // search by the same tag value
+        [backgroundView removeFromSuperview];
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -41,6 +65,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+- (NSInteger)calculateTimeInBackground:(NSString *)backgroundTime foregroundTime:(NSString *)foregroundTime {
+    
+    [self dateFormatter];
+    
+    NSDate *lastDate = [self.dateFormat dateFromString:foregroundTime];
+    NSDate *currentDate = [self.dateFormat dateFromString:backgroundTime];
+    NSTimeInterval lastTimetInterval = [lastDate timeIntervalSinceNow];
+    NSTimeInterval currentTimeInterval = [currentDate timeIntervalSinceNow];
+    NSTimeInterval timeInterval = lastTimetInterval - currentTimeInterval;
+    return timeInterval;
+}
+
+- (void)dateFormatter {
+    
+    self.dateFormat = [[NSDateFormatter alloc]init];
+    [self.dateFormat setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
 }
 
 #pragma mark - Core Data stack

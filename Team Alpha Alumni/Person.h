@@ -5,19 +5,23 @@
 //  Copyright (c) 2015 Awesome Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 
 @interface Person : NSObject
 
-@property (weak, nonatomic) NSString *firstName;
-@property (weak, nonatomic) NSString *lastName;
-@property (weak, nonatomic) NSString *location;
-@property (weak, nonatomic) NSString *position;
-@property (weak, nonatomic) NSString *dates;
-@property (weak, nonatomic) NSString *role;
-@property (weak, nonatomic) NSString *memory;
-@property (weak, nonatomic) NSString *definition;
-@property (weak, nonatomic) NSString *thumbnail;
-@property (weak, nonatomic) NSString *fullRes;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *location;
+@property (strong, nonatomic) NSArray *work;
+@property (strong, nonatomic) NSNumber *startYear;
+@property (strong, nonatomic) NSString *role;
+@property (strong, nonatomic) NSString *memory;
+@property (strong, nonatomic) NSString *experience;
+@property (strong, nonatomic) NSString *thumbnail;
+@property (strong, nonatomic) NSString *photo;
+
+- (NSString *)getFormattedWorkInformation;
+
++ (RKObjectRequestOperation *)getObjectRequestOperation;
 
 @end
