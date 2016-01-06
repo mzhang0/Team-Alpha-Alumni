@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10FB77CA1C3DA16E0076DDA0 /* App Icon 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB77C31C3DA16E0076DDA0 /* App Icon 29.png */; };
+		10FB77CB1C3DA16E0076DDA0 /* App Icon 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB77C41C3DA16E0076DDA0 /* App Icon 40.png */; };
+		10FB77CC1C3DA16E0076DDA0 /* App Icon 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB77C51C3DA16E0076DDA0 /* App Icon 58.png */; };
+		10FB77CD1C3DA16E0076DDA0 /* App Icon 76.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB77C61C3DA16E0076DDA0 /* App Icon 76.png */; };
+		10FB77CE1C3DA16E0076DDA0 /* App Icon 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB77C71C3DA16E0076DDA0 /* App Icon 80.png */; };
+		10FB77CF1C3DA16E0076DDA0 /* App Icon 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB77C81C3DA16E0076DDA0 /* App Icon 152.png */; };
+		10FB77D01C3DA16E0076DDA0 /* App Icon 167.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB77C91C3DA16E0076DDA0 /* App Icon 167.png */; };
 		2024C8EF1B07C93E00138C3F /* SearchTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024C8EE1B07C93E00138C3F /* SearchTableVC.m */; };
 		2024C8F21B07CA7000138C3F /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024C8F11B07CA7000138C3F /* SearchTableViewCell.m */; };
 		202DBA441AE4587B00913B85 /* ProfileCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBA431AE4587B00913B85 /* ProfileCollectionVC.m */; };
@@ -51,6 +58,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10FB77C31C3DA16E0076DDA0 /* App Icon 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Icon 29.png"; sourceTree = "<group>"; };
+		10FB77C41C3DA16E0076DDA0 /* App Icon 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Icon 40.png"; sourceTree = "<group>"; };
+		10FB77C51C3DA16E0076DDA0 /* App Icon 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Icon 58.png"; sourceTree = "<group>"; };
+		10FB77C61C3DA16E0076DDA0 /* App Icon 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Icon 76.png"; sourceTree = "<group>"; };
+		10FB77C71C3DA16E0076DDA0 /* App Icon 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Icon 80.png"; sourceTree = "<group>"; };
+		10FB77C81C3DA16E0076DDA0 /* App Icon 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Icon 152.png"; sourceTree = "<group>"; };
+		10FB77C91C3DA16E0076DDA0 /* App Icon 167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Icon 167.png"; sourceTree = "<group>"; };
 		2024C8ED1B07C93E00138C3F /* SearchTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableVC.h; sourceTree = "<group>"; };
 		2024C8EE1B07C93E00138C3F /* SearchTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableVC.m; sourceTree = "<group>"; };
 		2024C8F01B07CA7000138C3F /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
@@ -147,6 +161,13 @@
 		202DDA791AC601F900F4DC5E /* images */ = {
 			isa = PBXGroup;
 			children = (
+				10FB77C31C3DA16E0076DDA0 /* App Icon 29.png */,
+				10FB77C41C3DA16E0076DDA0 /* App Icon 40.png */,
+				10FB77C51C3DA16E0076DDA0 /* App Icon 58.png */,
+				10FB77C61C3DA16E0076DDA0 /* App Icon 76.png */,
+				10FB77C71C3DA16E0076DDA0 /* App Icon 80.png */,
+				10FB77C81C3DA16E0076DDA0 /* App Icon 152.png */,
+				10FB77C91C3DA16E0076DDA0 /* App Icon 167.png */,
 				206B26BF1AFD4AFC00EEC3DE /* AwesomeIncLogo.png */,
 				206106F81AFC2EFC00A767C4 /* MapIcon.png */,
 				206106F91AFC2EFC00A767C4 /* ProfileIcon.png */,
@@ -287,6 +308,7 @@
 				E039232E1AB9DC130086AE15 /* Frameworks */,
 				E039232F1AB9DC130086AE15 /* Resources */,
 				71BDA975D5D31991302B9326 /* Copy Pods Resources */,
+				212846EA9000B3680916AB2C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,7 +343,7 @@
 		E03923291AB9DC130086AE15 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Awesome Inc";
 				TargetAttributes = {
 					E03923301AB9DC130086AE15 = {
@@ -358,14 +380,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				20C9D5491AD381BC002F7BA4 /* Exo-Black.otf in Resources */,
+				10FB77CF1C3DA16E0076DDA0 /* App Icon 152.png in Resources */,
 				206106FE1AFC2EFC00A767C4 /* WorkIcon.png in Resources */,
 				206106FD1AFC2EFC00A767C4 /* ProfileIcon.png in Resources */,
+				10FB77CB1C3DA16E0076DDA0 /* App Icon 40.png in Resources */,
+				10FB77CE1C3DA16E0076DDA0 /* App Icon 80.png in Resources */,
+				10FB77CA1C3DA16E0076DDA0 /* App Icon 29.png in Resources */,
 				E03923431AB9DC130086AE15 /* Main.storyboard in Resources */,
 				E03923481AB9DC130086AE15 /* LaunchScreen.xib in Resources */,
 				206106FC1AFC2EFC00A767C4 /* MapIcon.png in Resources */,
 				202DDA831AC601F900F4DC5E /* ProfilePlaceholder.png in Resources */,
+				10FB77D01C3DA16E0076DDA0 /* App Icon 167.png in Resources */,
+				10FB77CC1C3DA16E0076DDA0 /* App Icon 58.png in Resources */,
 				E03923451AB9DC130086AE15 /* Images.xcassets in Resources */,
 				206B26C01AFD4AFC00EEC3DE /* AwesomeIncLogo.png in Resources */,
+				10FB77CD1C3DA16E0076DDA0 /* App Icon 76.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +408,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		212846EA9000B3680916AB2C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		71BDA975D5D31991302B9326 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,6 +540,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -560,8 +605,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Team Alpha Alumni/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Awesome-Inc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -571,8 +619,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Team Alpha Alumni/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Awesome-Inc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -590,6 +641,7 @@
 				);
 				INFOPLIST_FILE = "Team Alpha AlumniTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Awesome-Inc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Team Alpha Alumni.app/Team Alpha Alumni";
 			};
@@ -605,6 +657,7 @@
 				);
 				INFOPLIST_FILE = "Team Alpha AlumniTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Awesome-Inc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Team Alpha Alumni.app/Team Alpha Alumni";
 			};
