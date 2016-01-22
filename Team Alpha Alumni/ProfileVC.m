@@ -28,7 +28,7 @@
         self.SearchButton.tintColor = [UIColor colorWithRed:103/255.0f green:103/255.0f blue:103/255.0f alpha:1.0f];
     }
     
-    if ([self.alumnus.name isEqualToString:@"Will Crawford"]) {
+    if ([self.self.alumnus.getFormattedWorkInformation isEqualToString:@"In Memoriam"]) {
         self.FavoriteMemoryLabel.text = @"Favorite Rule:";
         self.ExperienceLabel.text = @"Random Fact About Me:";
     }

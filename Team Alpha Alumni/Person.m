@@ -49,7 +49,7 @@
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:personMapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    NSURL *url = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/xhqcui3k8aryjpn/Trial5a.json"];
+    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/ainc/awesomeinc2013/gh-pages/_data/alumni.json"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     return [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
