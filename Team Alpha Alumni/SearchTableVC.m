@@ -139,9 +139,11 @@
     [searchController.searchBar becomeFirstResponder];
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
+/*
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
 }
+*/
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope{
     [self updateSearchResultsForSearchController:self.searchController];
